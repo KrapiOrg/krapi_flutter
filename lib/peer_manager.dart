@@ -11,7 +11,7 @@ import 'peer.dart';
 import 'signaling_client.dart';
 
 class PeerManager extends StateNotifier<PeerManagerState> {
-  static const localType = PeerType.observer;
+  static var localType = PeerType.unknown;
   final signalingClient = SignalingClient();
   final messages = BehaviorSubject<PeerMessage>();
   final peerMap = <String, Peer>{};
@@ -81,6 +81,9 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   }
 
   static Future<PeerManager> create() async {
+    if (localType == PeerType.unknown) {
+      throw Exception('PeerManager.localType must be set!');
+    }
     final peerManager = PeerManager(const PeerManagerState.initial());
     peerManager.signalingClient.listen(SignalingMessageType.rtcSetup, peerManager.onRTCSetup);
     peerManager.signalingClient.listen(SignalingMessageType.peerAvailable, peerManager.onPeerAvailable);
