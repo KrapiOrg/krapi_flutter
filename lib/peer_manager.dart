@@ -80,7 +80,7 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     }
   }
 
-  static Future<PeerManager> create() async {
+  static Future<PeerManager> create(String? identity) async {
     if (localType == PeerType.unknown) {
       throw Exception('PeerManager.localType must be set!');
     }
@@ -88,7 +88,7 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     peerManager.signalingClient.listen(SignalingMessageType.rtcSetup, peerManager.onRTCSetup);
     peerManager.signalingClient.listen(SignalingMessageType.peerAvailable, peerManager.onPeerAvailable);
     peerManager.signalingClient.listen(SignalingMessageType.peerClosed, peerManager.onPeerClosed);
-    await peerManager.signalingClient.init();
+    await peerManager.signalingClient.init(identity);
     return peerManager;
   }
 
@@ -143,8 +143,16 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   }
 }
 
+final identityProvider = Provider<String>(
+  (_) => throw UnimplementedError('Override identityProvider with an identity'),
+);
+
 final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
-  (_) async => await PeerManager.create(),
+  (ref) async {
+    final identity = ref.watch(identityProvider);
+    return await PeerManager.create(identity);
+  },
+  dependencies: [identityProvider],
 );
 
 final peerMessageProvider = StreamProvider.autoDispose.family<PeerMessage, PeerMessageType>(
