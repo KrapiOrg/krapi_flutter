@@ -103,7 +103,7 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     return await peerMap[id]!.submit(message);
   }
 
-  Future<List<PeerMessage>> broadcastSubmit(
+  Future<List<Future<PeerMessage>>> broadcastSubmit(
     PeerMessage message, {
     Set<PeerType> types = const {PeerType.full},
     Set<PeerState> states = const {PeerState.open},
@@ -116,7 +116,7 @@ class PeerManager extends StateNotifier<PeerManagerState> {
         futures.add(peer.submit(message.copyWith(tag: const Uuid().v4())));
       }
     }
-    return await Future.wait(futures);
+    return futures;
   }
 
   void broadcast(
