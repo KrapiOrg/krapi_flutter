@@ -264,9 +264,9 @@ class Peer {
   Future<PeerState> get state async {
     final currentState = _state.value;
 
-    if (currentState == PeerType.unknown) {
+    if (currentState == PeerState.unknown) {
       final response = await submit(
-        PeerMessage.peerTypeRequest(
+        PeerMessage.peerStateRequest(
           senderIdentity: signalingClient.identity,
           receiverIdentity: remoteIdentity,
           tag: const Uuid().v4(),
