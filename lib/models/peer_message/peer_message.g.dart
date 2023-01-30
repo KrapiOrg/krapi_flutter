@@ -10,8 +10,8 @@ _$_PeerMessagePeerTypeRequest _$$_PeerMessagePeerTypeRequestFromJson(
         Map<String, dynamic> json) =>
     _$_PeerMessagePeerTypeRequest(
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerTypeRequest,
       content: json['content'],
@@ -58,8 +58,8 @@ _$_PeerMessagePeerTypeResponse _$$_PeerMessagePeerTypeResponseFromJson(
     _$_PeerMessagePeerTypeResponse(
       content: PeerType.fromJson(json['content'] as String),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerTypeResponse,
       timestamp: json['timestamp'] as int,
@@ -81,8 +81,8 @@ _$_PeerMessageAddTransaction _$$_PeerMessageAddTransactionFromJson(
     _$_PeerMessageAddTransaction(
       content: Transaction.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.addTransaction,
       timestamp: json['timestamp'] as int,
@@ -104,8 +104,8 @@ _$_PeerMessageBlockHeadersRequest _$$_PeerMessageBlockHeadersRequestFromJson(
     _$_PeerMessageBlockHeadersRequest(
       content: BlockHeader.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockHeadersRequest,
       timestamp: json['timestamp'] as int,
@@ -128,8 +128,8 @@ _$_PeerMessageBlockHeadersResponse _$$_PeerMessageBlockHeadersResponseFromJson(
       content: BlockHeadersResponseContent.fromJson(
           json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockHeadersResponse,
       timestamp: json['timestamp'] as int,
@@ -151,8 +151,8 @@ _$_PeerMessageBlockRequest _$$_PeerMessageBlockRequestFromJson(
     _$_PeerMessageBlockRequest(
       content: BlockHeader.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockRequest,
       timestamp: json['timestamp'] as int,
@@ -174,8 +174,8 @@ _$_PeerMessageBlockResponse _$$_PeerMessageBlockResponseFromJson(
     _$_PeerMessageBlockResponse(
       content: Block.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockResponse,
       timestamp: json['timestamp'] as int,
@@ -198,8 +198,8 @@ _$_PeerMessageBlockNotFoundResponse
           content:
               BlockHeader.fromJson(json['content'] as Map<String, dynamic>),
           senderIdentity: json['sender_identity'] as String,
-          receiverIdentity: json['receiver_identity'] as String,
-          tag: json['tag'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
               PeerMessageType.blockNotFoundResponse,
           timestamp: json['timestamp'] as int,
@@ -220,8 +220,8 @@ _$_PeerMessagePeerStateRequest _$$_PeerMessagePeerStateRequestFromJson(
         Map<String, dynamic> json) =>
     _$_PeerMessagePeerStateRequest(
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateRequest,
       content: json['content'],
@@ -244,8 +244,8 @@ _$_PeerMessagePeerStateResponse _$$_PeerMessagePeerStateResponseFromJson(
     _$_PeerMessagePeerStateResponse(
       content: PeerState.fromJson(json['content'] as String),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateResponse,
       timestamp: json['timestamp'] as int,
@@ -267,8 +267,8 @@ _$_PeerMessagePeerStateUpdate _$$_PeerMessagePeerStateUpdateFromJson(
     _$_PeerMessagePeerStateUpdate(
       content: PeerState.fromJson(json['content'] as String),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateUpdate,
       timestamp: json['timestamp'] as int,
@@ -290,8 +290,8 @@ _$_PeerMessageAddBlock _$$_PeerMessageAddBlockFromJson(
     _$_PeerMessageAddBlock(
       content: Block.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.addBlock,
       timestamp: json['timestamp'] as int,
@@ -313,8 +313,8 @@ _$_PeerMessageBlockRejected _$$_PeerMessageBlockRejectedFromJson(
     _$_PeerMessageBlockRejected(
       BlockHeader.fromJson(json['header'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockRejected,
       content: json['content'],
@@ -338,8 +338,8 @@ _$_PeerMessageBlockAccepted _$$_PeerMessageBlockAcceptedFromJson(
     _$_PeerMessageBlockAccepted(
       content: BlockHeader.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockAccepted,
       timestamp: json['timestamp'] as int,
@@ -360,8 +360,8 @@ _$_PeerMessageGetLastBlockRequest _$$_PeerMessageGetLastBlockRequestFromJson(
         Map<String, dynamic> json) =>
     _$_PeerMessageGetLastBlockRequest(
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.getLastBlockRequest,
       content: json['content'],
@@ -384,8 +384,8 @@ _$_PeerMessageGetLastBlockResponse _$$_PeerMessageGetLastBlockResponseFromJson(
     _$_PeerMessageGetLastBlockResponse(
       content: Block.fromJson(json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.getLastBlockResponse,
       timestamp: json['timestamp'] as int,
@@ -408,8 +408,8 @@ _$_PeerMessageSetTransactionStatus _$$_PeerMessageSetTransactionStatusFromJson(
       content: SetTransactionStatusContent.fromJson(
           json['content'] as Map<String, dynamic>),
       senderIdentity: json['sender_identity'] as String,
-      receiverIdentity: json['receiver_identity'] as String,
-      tag: json['tag'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.setTransactionStatus,
       timestamp: json['timestamp'] as int,

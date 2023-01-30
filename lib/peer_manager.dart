@@ -128,7 +128,12 @@ class PeerManager extends StateNotifier<PeerManagerState> {
       final type = await peer.type;
       final state = await peer.state;
       if (types.contains(type) && states.contains(state)) {
-        peer.send(message.copyWith(tag: const Uuid().v4()));
+        peer.send(
+          message.copyWith(
+            tag: const Uuid().v4(),
+            receiverIdentity: peer.remoteIdentity,
+          ),
+        );
       }
     }
   }

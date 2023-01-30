@@ -41,8 +41,8 @@ enum PeerMessageType {
 abstract class KrapiMessageInterface {
   PeerMessageType get type;
   String get senderIdentity;
-  String get receiverIdentity;
-  String get tag;
+  String? get receiverIdentity;
+  String? get tag;
 }
 
 @Freezed(
@@ -56,8 +56,8 @@ class PeerMessage with _$PeerMessage {
   @Implements<KrapiMessageInterface>()
   const factory PeerMessage.peerTypeRequest({
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.peerTypeRequest) PeerMessageType type,
     dynamic content,
     required int timestamp,
@@ -66,8 +66,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.peerTypeResponse({
     required PeerType content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.peerTypeResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessagePeerTypeResponse;
@@ -75,8 +75,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.addTransaction({
     required Transaction content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.addTransaction) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageAddTransaction;
@@ -84,8 +84,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockHeadersRequest({
     required BlockHeader content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockHeadersRequest) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockHeadersRequest;
@@ -93,8 +93,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockHeadersResponse({
     required BlockHeadersResponseContent content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockHeadersResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockHeadersResponse;
@@ -102,8 +102,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockRequest({
     required BlockHeader content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockRequest) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockRequest;
@@ -111,8 +111,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockResponse({
     required Block content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockResponse;
@@ -120,16 +120,16 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockNotFoundResponse({
     required BlockHeader content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockNotFoundResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockNotFoundResponse;
   @Implements<KrapiMessageInterface>()
   const factory PeerMessage.peerStateRequest({
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.peerStateRequest) PeerMessageType type,
     dynamic content,
     required int timestamp,
@@ -138,8 +138,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.peerStateResponse({
     required PeerState content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.peerStateResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessagePeerStateResponse;
@@ -147,8 +147,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.peerStateUpdate({
     required PeerState content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.peerStateUpdate) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessagePeerStateUpdate;
@@ -156,8 +156,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.addBlock({
     required Block content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.addBlock) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageAddBlock;
@@ -165,8 +165,8 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockRejected(
     BlockHeader header, {
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockRejected) PeerMessageType type,
     dynamic content,
     required int timestamp,
@@ -175,16 +175,16 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.blockAccepted({
     required BlockHeader content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.blockAccepted) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageBlockAccepted;
   @Implements<KrapiMessageInterface>()
   const factory PeerMessage.getLastBlockRequest({
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.getLastBlockRequest) PeerMessageType type,
     dynamic content,
     required int timestamp,
@@ -193,16 +193,16 @@ class PeerMessage with _$PeerMessage {
   const factory PeerMessage.getLastBlockResponse({
     required Block content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.getLastBlockResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageGetLastBlockResponse;
   const factory PeerMessage.setTransactionStatus({
     required SetTransactionStatusContent content,
     required String senderIdentity,
-    required String receiverIdentity,
-    required String tag,
+    String? receiverIdentity,
+    String? tag,
     @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageSetTransactionStatus;

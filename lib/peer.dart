@@ -69,7 +69,7 @@ class Peer {
   void onPeerTypeRequest(PeerMessage msg) {
     send(
       PeerMessage.peerTypeResponse(
-          senderIdentity: msg.receiverIdentity,
+          senderIdentity: msg.receiverIdentity!,
           receiverIdentity: msg.senderIdentity,
           tag: msg.tag,
           content: localType,
@@ -80,7 +80,7 @@ class Peer {
   void onPeerStateRequest(PeerMessage msg) {
     send(
       PeerMessage.peerStateResponse(
-          senderIdentity: msg.receiverIdentity,
+          senderIdentity: msg.receiverIdentity!,
           receiverIdentity: msg.senderIdentity,
           tag: msg.tag,
           content: PeerState.open,
