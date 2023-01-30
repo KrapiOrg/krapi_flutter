@@ -14181,7 +14181,7 @@ class _$_PeerMessageTransactionsInRequest
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.setTransactionStatus,
+      this.type = PeerMessageType.transactionsInRequest,
       required this.timestamp});
 
   factory _$_PeerMessageTransactionsInRequest.fromJson(
@@ -14964,7 +14964,7 @@ class _$_PeerMessageTransactionsInResponse
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.setTransactionStatus,
+      this.type = PeerMessageType.transactionsInResponse,
       required this.timestamp});
 
   factory _$_PeerMessageTransactionsInResponse.fromJson(
@@ -15748,7 +15748,7 @@ class _$_PeerMessageTransactionsOutRequest
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.setTransactionStatus,
+      this.type = PeerMessageType.transactionsOutRequest,
       required this.timestamp});
 
   factory _$_PeerMessageTransactionsOutRequest.fromJson(
@@ -16532,7 +16532,7 @@ class _$_PeerMessageTransactionsOutResponse
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.setTransactionStatus,
+      this.type = PeerMessageType.transactionsOutResponse,
       required this.timestamp});
 
   factory _$_PeerMessageTransactionsOutResponse.fromJson(

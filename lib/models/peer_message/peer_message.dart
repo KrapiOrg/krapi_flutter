@@ -216,7 +216,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    @Default(PeerMessageType.transactionsInRequest) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsInRequest;
   const factory PeerMessage.transactionsInResponse({
@@ -224,7 +224,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    @Default(PeerMessageType.transactionsInResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsInResponse;
   const factory PeerMessage.transactionsOutRequest({
@@ -232,7 +232,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    @Default(PeerMessageType.transactionsOutRequest) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsOutRequest;
   const factory PeerMessage.transactionsOutResponse({
@@ -240,7 +240,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    @Default(PeerMessageType.transactionsOutResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsOutResponse;
   factory PeerMessage.fromJson(Map<String, dynamic> json) => _$PeerMessageFromJson(json);

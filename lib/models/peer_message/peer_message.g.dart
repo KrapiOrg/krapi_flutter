@@ -438,7 +438,7 @@ _$_PeerMessageTransactionsInRequest
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.setTransactionStatus,
+              PeerMessageType.transactionsInRequest,
           timestamp: json['timestamp'] as int,
         );
 
@@ -461,7 +461,7 @@ _$_PeerMessageTransactionsInResponse
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.setTransactionStatus,
+              PeerMessageType.transactionsInResponse,
           timestamp: json['timestamp'] as int,
         );
 
@@ -484,7 +484,7 @@ _$_PeerMessageTransactionsOutRequest
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.setTransactionStatus,
+              PeerMessageType.transactionsOutRequest,
           timestamp: json['timestamp'] as int,
         );
 
@@ -507,7 +507,7 @@ _$_PeerMessageTransactionsOutResponse
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.setTransactionStatus,
+              PeerMessageType.transactionsOutResponse,
           timestamp: json['timestamp'] as int,
         );
 
