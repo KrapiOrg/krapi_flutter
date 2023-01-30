@@ -152,7 +152,7 @@ final identityProvider = Provider<String>(
   (_) => throw UnimplementedError('Override identityProvider with an identity'),
 );
 
-final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
+final peerManagerProvider = FutureProvider<PeerManager>(
   (ref) async {
     final identity = ref.watch(identityProvider);
     return await PeerManager.create(identity);
