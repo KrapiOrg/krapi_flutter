@@ -51,6 +51,10 @@ const _$PeerMessageTypeEnumMap = {
   PeerMessageType.blockAccepted: 'block_accepted',
   PeerMessageType.getLastBlockRequest: 'get_last_block_request',
   PeerMessageType.getLastBlockResponse: 'get_last_block_response',
+  PeerMessageType.transactionsInRequest: 'transactions_in_request',
+  PeerMessageType.transactionsInResponse: 'transactions_in_response',
+  PeerMessageType.transactionsOutRequest: 'transactions_out_request',
+  PeerMessageType.transactionsOutResponse: 'transactions_out_response',
 };
 
 _$_PeerMessagePeerTypeResponse _$$_PeerMessagePeerTypeResponseFromJson(
@@ -419,6 +423,98 @@ Map<String, dynamic> _$$_PeerMessageSetTransactionStatusToJson(
         _$_PeerMessageSetTransactionStatus instance) =>
     <String, dynamic>{
       'content': instance.content.toJson(),
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageTransactionsInRequest
+    _$$_PeerMessageTransactionsInRequestFromJson(Map<String, dynamic> json) =>
+        _$_PeerMessageTransactionsInRequest(
+          content: json['content'] as String,
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.setTransactionStatus,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageTransactionsInRequestToJson(
+        _$_PeerMessageTransactionsInRequest instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageTransactionsInResponse
+    _$$_PeerMessageTransactionsInResponseFromJson(Map<String, dynamic> json) =>
+        _$_PeerMessageTransactionsInResponse(
+          content: json['content'] as int,
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.setTransactionStatus,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageTransactionsInResponseToJson(
+        _$_PeerMessageTransactionsInResponse instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageTransactionsOutRequest
+    _$$_PeerMessageTransactionsOutRequestFromJson(Map<String, dynamic> json) =>
+        _$_PeerMessageTransactionsOutRequest(
+          content: json['content'] as String,
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.setTransactionStatus,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageTransactionsOutRequestToJson(
+        _$_PeerMessageTransactionsOutRequest instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageTransactionsOutResponse
+    _$$_PeerMessageTransactionsOutResponseFromJson(Map<String, dynamic> json) =>
+        _$_PeerMessageTransactionsOutResponse(
+          content: json['content'] as int,
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.setTransactionStatus,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageTransactionsOutResponseToJson(
+        _$_PeerMessageTransactionsOutResponse instance) =>
+    <String, dynamic>{
+      'content': instance.content,
       'sender_identity': instance.senderIdentity,
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,

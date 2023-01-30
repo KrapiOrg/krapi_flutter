@@ -36,6 +36,10 @@ enum PeerMessageType {
   blockAccepted,
   getLastBlockRequest,
   getLastBlockResponse,
+  transactionsInRequest,
+  transactionsInResponse,
+  transactionsOutRequest,
+  transactionsOutResponse,
 }
 
 abstract class KrapiMessageInterface {
@@ -206,5 +210,38 @@ class PeerMessage with _$PeerMessage {
     @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageSetTransactionStatus;
+
+  const factory PeerMessage.transactionsInRequest({
+    required String content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageTransactionsInRequest;
+  const factory PeerMessage.transactionsInResponse({
+    required int content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageTransactionsInResponse;
+  const factory PeerMessage.transactionsOutRequest({
+    required String content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageTransactionsOutRequest;
+  const factory PeerMessage.transactionsOutResponse({
+    required int content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageTransactionsOutResponse;
   factory PeerMessage.fromJson(Map<String, dynamic> json) => _$PeerMessageFromJson(json);
 }
