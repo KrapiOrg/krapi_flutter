@@ -7,6 +7,7 @@ enum PeerType {
   unknown,
   full,
   light,
+  control,
   observer;
 
   factory PeerType.fromJson(String str) {
@@ -16,6 +17,8 @@ enum PeerType {
       return PeerType.full;
     } else if (str == 'light') {
       return PeerType.light;
+    } else if (str == 'control') {
+      return PeerType.control;
     }
     return PeerType.observer;
   }
@@ -29,6 +32,8 @@ enum PeerType {
         return 'light';
       case PeerType.observer:
         return 'observer';
+      case PeerType.control:
+        return 'control';
     }
   }
 }
