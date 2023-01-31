@@ -652,7 +652,7 @@ _$_PeerMessageIsControlStartedRequest
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.controlStopped,
+              PeerMessageType.isControlStartedRequest,
           timestamp: json['timestamp'] as int,
         );
 
@@ -676,7 +676,7 @@ _$_PeerMessageIsControlStartedResponse
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
-              PeerMessageType.isControlStartedRequest,
+              PeerMessageType.isControlStartedResponse,
           timestamp: json['timestamp'] as int,
         );
 

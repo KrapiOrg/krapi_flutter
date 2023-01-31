@@ -295,7 +295,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.controlStopped) PeerMessageType type,
+    @Default(PeerMessageType.isControlStartedRequest) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageIsControlStartedRequest;
   const factory PeerMessage.isControlStartedResponse({
@@ -303,7 +303,7 @@ class PeerMessage with _$PeerMessage {
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.isControlStartedRequest) PeerMessageType type,
+    @Default(PeerMessageType.isControlStartedResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageIsControlStartedResponse;
 

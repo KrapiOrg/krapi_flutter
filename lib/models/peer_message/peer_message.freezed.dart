@@ -26547,7 +26547,7 @@ class _$_PeerMessageIsControlStartedRequest
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.controlStopped,
+      this.type = PeerMessageType.isControlStartedRequest,
       required this.timestamp});
 
   factory _$_PeerMessageIsControlStartedRequest.fromJson(
@@ -27533,7 +27533,7 @@ class _$_PeerMessageIsControlStartedResponse
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.isControlStartedRequest,
+      this.type = PeerMessageType.isControlStartedResponse,
       required this.timestamp});
 
   factory _$_PeerMessageIsControlStartedResponse.fromJson(
