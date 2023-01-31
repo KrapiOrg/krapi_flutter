@@ -68,6 +68,10 @@ PeerMessage _$PeerMessageFromJson(Map<String, dynamic> json) {
       return _PeerMessageOperateBetween.fromJson(json);
     case 'control_result':
       return _PeerMessageControlResult.fromJson(json);
+    case 'is_control_started_request':
+      return _PeerMessageIsControlStartedRequest.fromJson(json);
+    case 'is_control_started_response':
+      return _PeerMessageIsControlStartedResponse.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -279,6 +283,22 @@ mixin _$PeerMessage {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -477,6 +497,22 @@ mixin _$PeerMessage {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -675,6 +711,22 @@ mixin _$PeerMessage {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -722,6 +774,10 @@ mixin _$PeerMessage {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -762,6 +818,10 @@ mixin _$PeerMessage {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -802,6 +862,10 @@ mixin _$PeerMessage {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1193,6 +1257,22 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return peerTypeRequest(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -1395,6 +1475,22 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return peerTypeRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -1597,6 +1693,22 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
@@ -1651,6 +1763,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return peerTypeRequest(this);
   }
@@ -1694,6 +1810,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return peerTypeRequest?.call(this);
   }
@@ -1737,6 +1857,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
@@ -2108,6 +2232,22 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return peerTypeResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -2310,6 +2450,22 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return peerTypeResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -2512,6 +2668,22 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
@@ -2566,6 +2738,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return peerTypeResponse(this);
   }
@@ -2609,6 +2785,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return peerTypeResponse?.call(this);
   }
@@ -2652,6 +2832,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
@@ -3033,6 +3217,22 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return addTransaction(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -3235,6 +3435,22 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return addTransaction?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -3437,6 +3653,22 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -3491,6 +3723,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return addTransaction(this);
   }
@@ -3534,6 +3770,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return addTransaction?.call(this);
   }
@@ -3577,6 +3817,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -3960,6 +4204,22 @@ class _$_PeerMessageBlockHeadersRequest
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockHeadersRequest(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -4162,6 +4422,22 @@ class _$_PeerMessageBlockHeadersRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockHeadersRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -4364,6 +4640,22 @@ class _$_PeerMessageBlockHeadersRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
@@ -4418,6 +4710,10 @@ class _$_PeerMessageBlockHeadersRequest
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockHeadersRequest(this);
   }
@@ -4461,6 +4757,10 @@ class _$_PeerMessageBlockHeadersRequest
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockHeadersRequest?.call(this);
   }
@@ -4504,6 +4804,10 @@ class _$_PeerMessageBlockHeadersRequest
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
@@ -4888,6 +5192,22 @@ class _$_PeerMessageBlockHeadersResponse
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockHeadersResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -5090,6 +5410,22 @@ class _$_PeerMessageBlockHeadersResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockHeadersResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -5292,6 +5628,22 @@ class _$_PeerMessageBlockHeadersResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
@@ -5346,6 +5698,10 @@ class _$_PeerMessageBlockHeadersResponse
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockHeadersResponse(this);
   }
@@ -5389,6 +5745,10 @@ class _$_PeerMessageBlockHeadersResponse
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockHeadersResponse?.call(this);
   }
@@ -5432,6 +5792,10 @@ class _$_PeerMessageBlockHeadersResponse
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
@@ -5813,6 +6177,22 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockRequest(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -6015,6 +6395,22 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -6217,6 +6613,22 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
@@ -6271,6 +6683,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockRequest(this);
   }
@@ -6314,6 +6730,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockRequest?.call(this);
   }
@@ -6357,6 +6777,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
@@ -6737,6 +7161,22 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -6939,6 +7379,22 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -7141,6 +7597,22 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
@@ -7195,6 +7667,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockResponse(this);
   }
@@ -7238,6 +7714,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockResponse?.call(this);
   }
@@ -7281,6 +7761,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
@@ -7665,6 +8149,22 @@ class _$_PeerMessageBlockNotFoundResponse
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockNotFoundResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -7867,6 +8367,22 @@ class _$_PeerMessageBlockNotFoundResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockNotFoundResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -8069,6 +8585,22 @@ class _$_PeerMessageBlockNotFoundResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
@@ -8123,6 +8655,10 @@ class _$_PeerMessageBlockNotFoundResponse
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockNotFoundResponse(this);
   }
@@ -8166,6 +8702,10 @@ class _$_PeerMessageBlockNotFoundResponse
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockNotFoundResponse?.call(this);
   }
@@ -8209,6 +8749,10 @@ class _$_PeerMessageBlockNotFoundResponse
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
@@ -8581,6 +9125,22 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return peerStateRequest(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -8783,6 +9343,22 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return peerStateRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -8985,6 +9561,22 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
@@ -9039,6 +9631,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return peerStateRequest(this);
   }
@@ -9082,6 +9678,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return peerStateRequest?.call(this);
   }
@@ -9125,6 +9725,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
@@ -9496,6 +10100,22 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return peerStateResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -9698,6 +10318,22 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return peerStateResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -9900,6 +10536,22 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
@@ -9954,6 +10606,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return peerStateResponse(this);
   }
@@ -9997,6 +10653,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return peerStateResponse?.call(this);
   }
@@ -10040,6 +10700,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
@@ -10411,6 +11075,22 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return peerStateUpdate(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -10613,6 +11293,22 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return peerStateUpdate?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -10815,6 +11511,22 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
@@ -10869,6 +11581,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return peerStateUpdate(this);
   }
@@ -10912,6 +11628,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return peerStateUpdate?.call(this);
   }
@@ -10955,6 +11675,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
@@ -11334,6 +12058,22 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return addBlock(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -11536,6 +12276,22 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return addBlock?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -11738,6 +12494,22 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
@@ -11792,6 +12564,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return addBlock(this);
   }
@@ -11835,6 +12611,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return addBlock?.call(this);
   }
@@ -11878,6 +12658,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
@@ -12274,6 +13058,22 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockRejected(header, senderIdentity, receiverIdentity, tag, type,
         content, timestamp);
@@ -12476,6 +13276,22 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockRejected?.call(header, senderIdentity, receiverIdentity, tag,
         type, content, timestamp);
@@ -12678,6 +13494,22 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
@@ -12732,6 +13564,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockRejected(this);
   }
@@ -12775,6 +13611,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockRejected?.call(this);
   }
@@ -12818,6 +13658,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
@@ -13199,6 +14043,22 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return blockAccepted(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -13401,6 +14261,22 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return blockAccepted?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -13603,6 +14479,22 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
@@ -13657,6 +14549,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return blockAccepted(this);
   }
@@ -13700,6 +14596,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return blockAccepted?.call(this);
   }
@@ -13743,6 +14643,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
@@ -14116,6 +15020,22 @@ class _$_PeerMessageGetLastBlockRequest
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return getLastBlockRequest(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -14318,6 +15238,22 @@ class _$_PeerMessageGetLastBlockRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return getLastBlockRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content, timestamp);
@@ -14520,6 +15456,22 @@ class _$_PeerMessageGetLastBlockRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
@@ -14574,6 +15526,10 @@ class _$_PeerMessageGetLastBlockRequest
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return getLastBlockRequest(this);
   }
@@ -14617,6 +15573,10 @@ class _$_PeerMessageGetLastBlockRequest
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return getLastBlockRequest?.call(this);
   }
@@ -14660,6 +15620,10 @@ class _$_PeerMessageGetLastBlockRequest
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
@@ -15044,6 +16008,22 @@ class _$_PeerMessageGetLastBlockResponse
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return getLastBlockResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -15246,6 +16226,22 @@ class _$_PeerMessageGetLastBlockResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return getLastBlockResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -15448,6 +16444,22 @@ class _$_PeerMessageGetLastBlockResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
@@ -15502,6 +16514,10 @@ class _$_PeerMessageGetLastBlockResponse
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return getLastBlockResponse(this);
   }
@@ -15545,6 +16561,10 @@ class _$_PeerMessageGetLastBlockResponse
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return getLastBlockResponse?.call(this);
   }
@@ -15588,6 +16608,10 @@ class _$_PeerMessageGetLastBlockResponse
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
@@ -15973,6 +16997,22 @@ class _$_PeerMessageSetTransactionStatus
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return setTransactionStatus(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -16175,6 +17215,22 @@ class _$_PeerMessageSetTransactionStatus
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return setTransactionStatus?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -16377,6 +17433,22 @@ class _$_PeerMessageSetTransactionStatus
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (setTransactionStatus != null) {
@@ -16431,6 +17503,10 @@ class _$_PeerMessageSetTransactionStatus
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return setTransactionStatus(this);
   }
@@ -16474,6 +17550,10 @@ class _$_PeerMessageSetTransactionStatus
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return setTransactionStatus?.call(this);
   }
@@ -16517,6 +17597,10 @@ class _$_PeerMessageSetTransactionStatus
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (setTransactionStatus != null) {
@@ -16891,6 +17975,22 @@ class _$_PeerMessageTransactionsInRequest
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return transactionsInRequest(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -17093,6 +18193,22 @@ class _$_PeerMessageTransactionsInRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return transactionsInRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -17295,6 +18411,22 @@ class _$_PeerMessageTransactionsInRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsInRequest != null) {
@@ -17349,6 +18481,10 @@ class _$_PeerMessageTransactionsInRequest
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return transactionsInRequest(this);
   }
@@ -17392,6 +18528,10 @@ class _$_PeerMessageTransactionsInRequest
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return transactionsInRequest?.call(this);
   }
@@ -17435,6 +18575,10 @@ class _$_PeerMessageTransactionsInRequest
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsInRequest != null) {
@@ -17810,6 +18954,22 @@ class _$_PeerMessageTransactionsInResponse
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return transactionsInResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -18012,6 +19172,22 @@ class _$_PeerMessageTransactionsInResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return transactionsInResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -18214,6 +19390,22 @@ class _$_PeerMessageTransactionsInResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsInResponse != null) {
@@ -18268,6 +19460,10 @@ class _$_PeerMessageTransactionsInResponse
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return transactionsInResponse(this);
   }
@@ -18311,6 +19507,10 @@ class _$_PeerMessageTransactionsInResponse
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return transactionsInResponse?.call(this);
   }
@@ -18354,6 +19554,10 @@ class _$_PeerMessageTransactionsInResponse
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsInResponse != null) {
@@ -18730,6 +19934,22 @@ class _$_PeerMessageTransactionsOutRequest
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return transactionsOutRequest(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -18932,6 +20152,22 @@ class _$_PeerMessageTransactionsOutRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return transactionsOutRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -19134,6 +20370,22 @@ class _$_PeerMessageTransactionsOutRequest
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsOutRequest != null) {
@@ -19188,6 +20440,10 @@ class _$_PeerMessageTransactionsOutRequest
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return transactionsOutRequest(this);
   }
@@ -19231,6 +20487,10 @@ class _$_PeerMessageTransactionsOutRequest
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return transactionsOutRequest?.call(this);
   }
@@ -19274,6 +20534,10 @@ class _$_PeerMessageTransactionsOutRequest
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsOutRequest != null) {
@@ -19650,6 +20914,22 @@ class _$_PeerMessageTransactionsOutResponse
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return transactionsOutResponse(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -19852,6 +21132,22 @@ class _$_PeerMessageTransactionsOutResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return transactionsOutResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -20054,6 +21350,22 @@ class _$_PeerMessageTransactionsOutResponse
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsOutResponse != null) {
@@ -20108,6 +21420,10 @@ class _$_PeerMessageTransactionsOutResponse
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return transactionsOutResponse(this);
   }
@@ -20151,6 +21467,10 @@ class _$_PeerMessageTransactionsOutResponse
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return transactionsOutResponse?.call(this);
   }
@@ -20194,6 +21514,10 @@ class _$_PeerMessageTransactionsOutResponse
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (transactionsOutResponse != null) {
@@ -20564,6 +21888,22 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return controlPing(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -20766,6 +22106,22 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return controlPing?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -20968,6 +22324,22 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlPing != null) {
@@ -21022,6 +22394,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return controlPing(this);
   }
@@ -21065,6 +22441,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return controlPing?.call(this);
   }
@@ -21108,6 +22488,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlPing != null) {
@@ -21484,6 +22868,22 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return controlStarted(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -21686,6 +23086,22 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return controlStarted?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -21888,6 +23304,22 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlStarted != null) {
@@ -21942,6 +23374,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return controlStarted(this);
   }
@@ -21985,6 +23421,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return controlStarted?.call(this);
   }
@@ -22028,6 +23468,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlStarted != null) {
@@ -22404,6 +23848,22 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return controlStopped(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -22606,6 +24066,22 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return controlStopped?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -22808,6 +24284,22 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlStopped != null) {
@@ -22862,6 +24354,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return controlStopped(this);
   }
@@ -22905,6 +24401,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return controlStopped?.call(this);
   }
@@ -22948,6 +24448,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlStopped != null) {
@@ -23331,6 +24835,22 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return controlOperateBetween(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -23533,6 +25053,22 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return controlOperateBetween?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -23735,6 +25271,22 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlOperateBetween != null) {
@@ -23789,6 +25341,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return controlOperateBetween(this);
   }
@@ -23832,6 +25388,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return controlOperateBetween?.call(this);
   }
@@ -23875,6 +25435,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlOperateBetween != null) {
@@ -24257,6 +25821,22 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             PeerMessageType type,
             int timestamp)
         controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
   }) {
     return controlResult(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -24459,6 +26039,22 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
   }) {
     return controlResult?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
@@ -24661,6 +26257,22 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             PeerMessageType type,
             int timestamp)?
         controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlResult != null) {
@@ -24715,6 +26327,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
     required TResult Function(_PeerMessageOperateBetween value)
         controlOperateBetween,
     required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
   }) {
     return controlResult(this);
   }
@@ -24758,6 +26374,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
   }) {
     return controlResult?.call(this);
   }
@@ -24801,6 +26421,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
     TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
     required TResult orElse(),
   }) {
     if (controlResult != null) {
@@ -24844,5 +26468,1971 @@ abstract class _PeerMessageControlResult implements PeerMessage {
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageControlResultCopyWith<_$_PeerMessageControlResult>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PeerMessageIsControlStartedRequestCopyWith<$Res>
+    implements $PeerMessageCopyWith<$Res> {
+  factory _$$_PeerMessageIsControlStartedRequestCopyWith(
+          _$_PeerMessageIsControlStartedRequest value,
+          $Res Function(_$_PeerMessageIsControlStartedRequest) then) =
+      __$$_PeerMessageIsControlStartedRequestCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {dynamic content,
+      String senderIdentity,
+      String? receiverIdentity,
+      String? tag,
+      PeerMessageType type,
+      int timestamp});
+}
+
+/// @nodoc
+class __$$_PeerMessageIsControlStartedRequestCopyWithImpl<$Res>
+    extends _$PeerMessageCopyWithImpl<$Res,
+        _$_PeerMessageIsControlStartedRequest>
+    implements _$$_PeerMessageIsControlStartedRequestCopyWith<$Res> {
+  __$$_PeerMessageIsControlStartedRequestCopyWithImpl(
+      _$_PeerMessageIsControlStartedRequest _value,
+      $Res Function(_$_PeerMessageIsControlStartedRequest) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = freezed,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = freezed,
+    Object? tag = freezed,
+    Object? type = null,
+    Object? timestamp = null,
+  }) {
+    return _then(_$_PeerMessageIsControlStartedRequest(
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: freezed == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tag: freezed == tag
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PeerMessageIsControlStartedRequest
+    implements _PeerMessageIsControlStartedRequest {
+  const _$_PeerMessageIsControlStartedRequest(
+      {this.content,
+      required this.senderIdentity,
+      this.receiverIdentity,
+      this.tag,
+      this.type = PeerMessageType.controlStopped,
+      required this.timestamp});
+
+  factory _$_PeerMessageIsControlStartedRequest.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PeerMessageIsControlStartedRequestFromJson(json);
+
+  @override
+  final dynamic content;
+  @override
+  final String senderIdentity;
+  @override
+  final String? receiverIdentity;
+  @override
+  final String? tag;
+  @override
+  @JsonKey()
+  final PeerMessageType type;
+  @override
+  final int timestamp;
+
+  @override
+  String toString() {
+    return 'PeerMessage.isControlStartedRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PeerMessageIsControlStartedRequest &&
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(content),
+      senderIdentity,
+      receiverIdentity,
+      tag,
+      type,
+      timestamp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PeerMessageIsControlStartedRequestCopyWith<
+          _$_PeerMessageIsControlStartedRequest>
+      get copyWith => __$$_PeerMessageIsControlStartedRequestCopyWithImpl<
+          _$_PeerMessageIsControlStartedRequest>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerTypeRequest,
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerTypeResponse,
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addTransaction,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersRequest,
+    required TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockNotFoundResponse,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerStateRequest,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateResponse,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateUpdate,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addBlock,
+    required TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)
+        blockRejected,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockAccepted,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        getLastBlockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        setTransactionStatus,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlPing,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStarted,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStopped,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlOperateBetween,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
+  }) {
+    return isControlStartedRequest(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult? Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlPing,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+  }) {
+    return isControlStartedRequest?.call(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlPing,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (isControlStartedRequest != null) {
+      return isControlStartedRequest(
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerMessagePeerTypeRequest value)
+        peerTypeRequest,
+    required TResult Function(_PeerMessagePeerTypeResponse value)
+        peerTypeResponse,
+    required TResult Function(_PeerMessageAddTransaction value) addTransaction,
+    required TResult Function(_PeerMessageBlockHeadersRequest value)
+        blockHeadersRequest,
+    required TResult Function(_PeerMessageBlockHeadersResponse value)
+        blockHeadersResponse,
+    required TResult Function(_PeerMessageBlockRequest value) blockRequest,
+    required TResult Function(_PeerMessageBlockResponse value) blockResponse,
+    required TResult Function(_PeerMessageBlockNotFoundResponse value)
+        blockNotFoundResponse,
+    required TResult Function(_PeerMessagePeerStateRequest value)
+        peerStateRequest,
+    required TResult Function(_PeerMessagePeerStateResponse value)
+        peerStateResponse,
+    required TResult Function(_PeerMessagePeerStateUpdate value)
+        peerStateUpdate,
+    required TResult Function(_PeerMessageAddBlock value) addBlock,
+    required TResult Function(_PeerMessageBlockRejected value) blockRejected,
+    required TResult Function(_PeerMessageBlockAccepted value) blockAccepted,
+    required TResult Function(_PeerMessageGetLastBlockRequest value)
+        getLastBlockRequest,
+    required TResult Function(_PeerMessageGetLastBlockResponse value)
+        getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
+    required TResult Function(_PeerMessageTransactionsInRequest value)
+        transactionsInRequest,
+    required TResult Function(_PeerMessageTransactionsInResponse value)
+        transactionsInResponse,
+    required TResult Function(_PeerMessageTransactionsOutRequest value)
+        transactionsOutRequest,
+    required TResult Function(_PeerMessageTransactionsOutResponse value)
+        transactionsOutResponse,
+    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlStarted value) controlStarted,
+    required TResult Function(_PeerMessageControlStopped value) controlStopped,
+    required TResult Function(_PeerMessageOperateBetween value)
+        controlOperateBetween,
+    required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
+  }) {
+    return isControlStartedRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult? Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult? Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult? Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult? Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult? Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult? Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult? Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult? Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult? Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult? Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult? Function(_PeerMessageAddBlock value)? addBlock,
+    TResult? Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult? Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult? Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult? Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult? Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult? Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult? Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult? Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult? Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+  }) {
+    return isControlStartedRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult Function(_PeerMessageAddBlock value)? addBlock,
+    TResult Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (isControlStartedRequest != null) {
+      return isControlStartedRequest(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PeerMessageIsControlStartedRequestToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PeerMessageIsControlStartedRequest implements PeerMessage {
+  const factory _PeerMessageIsControlStartedRequest(
+      {final dynamic content,
+      required final String senderIdentity,
+      final String? receiverIdentity,
+      final String? tag,
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageIsControlStartedRequest;
+
+  factory _PeerMessageIsControlStartedRequest.fromJson(
+          Map<String, dynamic> json) =
+      _$_PeerMessageIsControlStartedRequest.fromJson;
+
+  @override
+  dynamic get content;
+  @override
+  String get senderIdentity;
+  @override
+  String? get receiverIdentity;
+  @override
+  String? get tag;
+  @override
+  PeerMessageType get type;
+  @override
+  int get timestamp;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PeerMessageIsControlStartedRequestCopyWith<
+          _$_PeerMessageIsControlStartedRequest>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PeerMessageIsControlStartedResponseCopyWith<$Res>
+    implements $PeerMessageCopyWith<$Res> {
+  factory _$$_PeerMessageIsControlStartedResponseCopyWith(
+          _$_PeerMessageIsControlStartedResponse value,
+          $Res Function(_$_PeerMessageIsControlStartedResponse) then) =
+      __$$_PeerMessageIsControlStartedResponseCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool content,
+      String senderIdentity,
+      String? receiverIdentity,
+      String? tag,
+      PeerMessageType type,
+      int timestamp});
+}
+
+/// @nodoc
+class __$$_PeerMessageIsControlStartedResponseCopyWithImpl<$Res>
+    extends _$PeerMessageCopyWithImpl<$Res,
+        _$_PeerMessageIsControlStartedResponse>
+    implements _$$_PeerMessageIsControlStartedResponseCopyWith<$Res> {
+  __$$_PeerMessageIsControlStartedResponseCopyWithImpl(
+      _$_PeerMessageIsControlStartedResponse _value,
+      $Res Function(_$_PeerMessageIsControlStartedResponse) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = freezed,
+    Object? tag = freezed,
+    Object? type = null,
+    Object? timestamp = null,
+  }) {
+    return _then(_$_PeerMessageIsControlStartedResponse(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as bool,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: freezed == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tag: freezed == tag
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PeerMessageIsControlStartedResponse
+    implements _PeerMessageIsControlStartedResponse {
+  const _$_PeerMessageIsControlStartedResponse(
+      {required this.content,
+      required this.senderIdentity,
+      this.receiverIdentity,
+      this.tag,
+      this.type = PeerMessageType.isControlStartedRequest,
+      required this.timestamp});
+
+  factory _$_PeerMessageIsControlStartedResponse.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PeerMessageIsControlStartedResponseFromJson(json);
+
+  @override
+  final bool content;
+  @override
+  final String senderIdentity;
+  @override
+  final String? receiverIdentity;
+  @override
+  final String? tag;
+  @override
+  @JsonKey()
+  final PeerMessageType type;
+  @override
+  final int timestamp;
+
+  @override
+  String toString() {
+    return 'PeerMessage.isControlStartedResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PeerMessageIsControlStartedResponse &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PeerMessageIsControlStartedResponseCopyWith<
+          _$_PeerMessageIsControlStartedResponse>
+      get copyWith => __$$_PeerMessageIsControlStartedResponseCopyWithImpl<
+          _$_PeerMessageIsControlStartedResponse>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerTypeRequest,
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerTypeResponse,
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addTransaction,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersRequest,
+    required TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockNotFoundResponse,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerStateRequest,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateResponse,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateUpdate,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addBlock,
+    required TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)
+        blockRejected,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockAccepted,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        getLastBlockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        setTransactionStatus,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlPing,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStarted,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStopped,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlOperateBetween,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
+  }) {
+    return isControlStartedResponse(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult? Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlPing,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+  }) {
+    return isControlStartedResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlPing,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (isControlStartedResponse != null) {
+      return isControlStartedResponse(
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerMessagePeerTypeRequest value)
+        peerTypeRequest,
+    required TResult Function(_PeerMessagePeerTypeResponse value)
+        peerTypeResponse,
+    required TResult Function(_PeerMessageAddTransaction value) addTransaction,
+    required TResult Function(_PeerMessageBlockHeadersRequest value)
+        blockHeadersRequest,
+    required TResult Function(_PeerMessageBlockHeadersResponse value)
+        blockHeadersResponse,
+    required TResult Function(_PeerMessageBlockRequest value) blockRequest,
+    required TResult Function(_PeerMessageBlockResponse value) blockResponse,
+    required TResult Function(_PeerMessageBlockNotFoundResponse value)
+        blockNotFoundResponse,
+    required TResult Function(_PeerMessagePeerStateRequest value)
+        peerStateRequest,
+    required TResult Function(_PeerMessagePeerStateResponse value)
+        peerStateResponse,
+    required TResult Function(_PeerMessagePeerStateUpdate value)
+        peerStateUpdate,
+    required TResult Function(_PeerMessageAddBlock value) addBlock,
+    required TResult Function(_PeerMessageBlockRejected value) blockRejected,
+    required TResult Function(_PeerMessageBlockAccepted value) blockAccepted,
+    required TResult Function(_PeerMessageGetLastBlockRequest value)
+        getLastBlockRequest,
+    required TResult Function(_PeerMessageGetLastBlockResponse value)
+        getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
+    required TResult Function(_PeerMessageTransactionsInRequest value)
+        transactionsInRequest,
+    required TResult Function(_PeerMessageTransactionsInResponse value)
+        transactionsInResponse,
+    required TResult Function(_PeerMessageTransactionsOutRequest value)
+        transactionsOutRequest,
+    required TResult Function(_PeerMessageTransactionsOutResponse value)
+        transactionsOutResponse,
+    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlStarted value) controlStarted,
+    required TResult Function(_PeerMessageControlStopped value) controlStopped,
+    required TResult Function(_PeerMessageOperateBetween value)
+        controlOperateBetween,
+    required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
+  }) {
+    return isControlStartedResponse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult? Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult? Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult? Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult? Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult? Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult? Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult? Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult? Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult? Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult? Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult? Function(_PeerMessageAddBlock value)? addBlock,
+    TResult? Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult? Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult? Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult? Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult? Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult? Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult? Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult? Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult? Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+  }) {
+    return isControlStartedResponse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult Function(_PeerMessageAddBlock value)? addBlock,
+    TResult Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (isControlStartedResponse != null) {
+      return isControlStartedResponse(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PeerMessageIsControlStartedResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PeerMessageIsControlStartedResponse implements PeerMessage {
+  const factory _PeerMessageIsControlStartedResponse(
+      {required final bool content,
+      required final String senderIdentity,
+      final String? receiverIdentity,
+      final String? tag,
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageIsControlStartedResponse;
+
+  factory _PeerMessageIsControlStartedResponse.fromJson(
+          Map<String, dynamic> json) =
+      _$_PeerMessageIsControlStartedResponse.fromJson;
+
+  @override
+  bool get content;
+  @override
+  String get senderIdentity;
+  @override
+  String? get receiverIdentity;
+  @override
+  String? get tag;
+  @override
+  PeerMessageType get type;
+  @override
+  int get timestamp;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PeerMessageIsControlStartedResponseCopyWith<
+          _$_PeerMessageIsControlStartedResponse>
       get copyWith => throw _privateConstructorUsedError;
 }

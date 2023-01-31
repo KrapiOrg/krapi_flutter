@@ -60,6 +60,8 @@ const _$PeerMessageTypeEnumMap = {
   PeerMessageType.controlStopped: 'control_stopped',
   PeerMessageType.controlOperateBetween: 'control_operate_between',
   PeerMessageType.controlResult: 'control_result',
+  PeerMessageType.isControlStartedRequest: 'is_control_started_request',
+  PeerMessageType.isControlStartedResponse: 'is_control_started_response',
 };
 
 _$_PeerMessagePeerTypeResponse _$$_PeerMessagePeerTypeResponseFromJson(
@@ -633,6 +635,53 @@ _$_PeerMessageControlResult _$$_PeerMessageControlResultFromJson(
 
 Map<String, dynamic> _$$_PeerMessageControlResultToJson(
         _$_PeerMessageControlResult instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageIsControlStartedRequest
+    _$$_PeerMessageIsControlStartedRequestFromJson(Map<String, dynamic> json) =>
+        _$_PeerMessageIsControlStartedRequest(
+          content: json['content'],
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.controlStopped,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageIsControlStartedRequestToJson(
+        _$_PeerMessageIsControlStartedRequest instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageIsControlStartedResponse
+    _$$_PeerMessageIsControlStartedResponseFromJson(
+            Map<String, dynamic> json) =>
+        _$_PeerMessageIsControlStartedResponse(
+          content: json['content'] as bool,
+          senderIdentity: json['sender_identity'] as String,
+          receiverIdentity: json['receiver_identity'] as String?,
+          tag: json['tag'] as String?,
+          type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+              PeerMessageType.isControlStartedRequest,
+          timestamp: json['timestamp'] as int,
+        );
+
+Map<String, dynamic> _$$_PeerMessageIsControlStartedResponseToJson(
+        _$_PeerMessageIsControlStartedResponse instance) =>
     <String, dynamic>{
       'content': instance.content,
       'sender_identity': instance.senderIdentity,

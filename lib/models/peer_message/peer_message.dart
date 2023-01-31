@@ -45,6 +45,8 @@ enum PeerMessageType {
   controlStopped,
   controlOperateBetween,
   controlResult,
+  isControlStartedRequest,
+  isControlStartedResponse,
 }
 
 abstract class KrapiMessageInterface {
@@ -287,6 +289,23 @@ class PeerMessage with _$PeerMessage {
     @Default(PeerMessageType.controlResult) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageControlResult;
+
+  const factory PeerMessage.isControlStartedRequest({
+    dynamic content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlStopped) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageIsControlStartedRequest;
+  const factory PeerMessage.isControlStartedResponse({
+    required bool content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.isControlStartedRequest) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageIsControlStartedResponse;
 
   factory PeerMessage.fromJson(Map<String, dynamic> json) => _$PeerMessageFromJson(json);
 }
