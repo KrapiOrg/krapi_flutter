@@ -162,6 +162,40 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   Future<PeerMessage> waitForMessageOfType(PeerMessageType type) async {
     return messages.firstWhere((e) => e.type == type);
   }
+
+  Future<List<String>> waitForPeersOfType(PeerType type, {int count = 1}) async {
+    final peerIds = <String>[];
+    for (final entry in peerMap.entries) {
+      final entryType = await entry.value.type;
+      if (entryType == type) {
+        peerIds.add(entry.key);
+      }
+    }
+    if (peerIds.length == count) {
+      return peerIds;
+    }
+    final completer = Completer();
+
+    final removeListener = addListener(
+      (state) {
+        state.mapOrNull(
+          newPeerAvailable: (val) async {
+            final typeOfNewPeer = await typeOfPeer(val.availablePeers.last);
+            if (typeOfNewPeer == type) {
+              peerIds.add(val.availablePeers.last);
+            }
+            if (peerIds.length == count) {
+              completer.complete();
+            }
+          },
+        );
+      },
+    );
+
+    await completer.future;
+    removeListener();
+    return peerIds;
+  }
 }
 
 final identityProvider = Provider<String>(
