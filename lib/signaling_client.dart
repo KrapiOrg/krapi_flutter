@@ -11,11 +11,12 @@ class SignalingClient {
   late final String _identity;
   late final IOWebSocketChannel _ws;
   final _subject = BehaviorSubject<SignalingMessage>();
+  late final Future pipeFuture;
 
   Future<void> init(String? identity) async {
     _ws = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
 
-    _ws.stream.map((e) => SignalingMessage.fromJson(e)).pipe(_subject.sink);
+    pipeFuture = _ws.stream.map((e) => SignalingMessage.fromJson(e)).pipe(_subject.sink);
 
     _identity = identity ?? const Uuid().v4();
 
@@ -52,9 +53,11 @@ class SignalingClient {
     });
   }
 
-  void dispose() async {
+  Future<void> dispose() async {
     await _ws.sink.close();
-    _subject.close();
+    await _ws.innerWebSocket?.close();
+    await pipeFuture;
+    await _subject.sink.close();
   }
 
   String get identity => _identity;

@@ -283,10 +283,13 @@ class Peer {
     channelOpen.firstWhere((open) => open).whenComplete(() => callback(remoteIdentity));
   }
 
-  void dispose() {
-    onSignalingClientRTCCandidateSubscription.cancel();
-    _type.close();
-    _state.close();
-    controller.close();
+  Future<void> dispose() async {
+    await onSignalingClientRTCCandidateSubscription.cancel();
+    await channel.close();
+    await connection.close();
+    await connection.dispose();
+    await _type.close();
+    await _state.close();
+    await controller.close();
   }
 }

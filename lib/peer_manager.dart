@@ -177,15 +177,18 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     final completer = Completer();
 
     final removeListener = addListener(
-      (state) {
-        state.mapOrNull(
+      (state) async {
+        await state.mapOrNull(
           newPeerAvailable: (val) async {
+            if (completer.isCompleted) return;
             final typeOfNewPeer = await typeOfPeer(val.availablePeers.last);
             if (typeOfNewPeer == type) {
               peerIds.add(val.availablePeers.last);
             }
             if (peerIds.length == count) {
-              completer.complete();
+              if (!completer.isCompleted) {
+                completer.complete();
+              }
             }
           },
         );
@@ -197,11 +200,13 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     return peerIds;
   }
 
-  void _closeConnections() {
+  void _closeConnections() async {
+    final futures = <Future<void>>[];
     for (final peer in peerMap.values) {
-      peer.dispose();
+      futures.add(peer.dispose());
     }
-    signalingClient.dispose();
+    await Future.wait(futures);
+    await signalingClient.dispose();
   }
 
   @override
