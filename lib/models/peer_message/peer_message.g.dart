@@ -55,6 +55,11 @@ const _$PeerMessageTypeEnumMap = {
   PeerMessageType.transactionsInResponse: 'transactions_in_response',
   PeerMessageType.transactionsOutRequest: 'transactions_out_request',
   PeerMessageType.transactionsOutResponse: 'transactions_out_response',
+  PeerMessageType.controlPing: 'control_ping',
+  PeerMessageType.controlStarted: 'control_started',
+  PeerMessageType.controlStopped: 'control_stopped',
+  PeerMessageType.controlOperateBetween: 'control_operate_between',
+  PeerMessageType.controlResult: 'control_result',
 };
 
 _$_PeerMessagePeerTypeResponse _$$_PeerMessagePeerTypeResponseFromJson(
@@ -513,6 +518,121 @@ _$_PeerMessageTransactionsOutResponse
 
 Map<String, dynamic> _$$_PeerMessageTransactionsOutResponseToJson(
         _$_PeerMessageTransactionsOutResponse instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageControlPing _$$_PeerMessageControlPingFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageControlPing(
+      content: json['content'] as String,
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.controlPing,
+      timestamp: json['timestamp'] as int,
+    );
+
+Map<String, dynamic> _$$_PeerMessageControlPingToJson(
+        _$_PeerMessageControlPing instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageControlStarted _$$_PeerMessageControlStartedFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageControlStarted(
+      content: json['content'],
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.controlStarted,
+      timestamp: json['timestamp'] as int,
+    );
+
+Map<String, dynamic> _$$_PeerMessageControlStartedToJson(
+        _$_PeerMessageControlStarted instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageControlStopped _$$_PeerMessageControlStoppedFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageControlStopped(
+      content: json['content'],
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.controlStopped,
+      timestamp: json['timestamp'] as int,
+    );
+
+Map<String, dynamic> _$$_PeerMessageControlStoppedToJson(
+        _$_PeerMessageControlStopped instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageOperateBetween _$$_PeerMessageOperateBetweenFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageOperateBetween(
+      content: Map<String, int>.from(json['content'] as Map),
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.controlStopped,
+      timestamp: json['timestamp'] as int,
+    );
+
+Map<String, dynamic> _$$_PeerMessageOperateBetweenToJson(
+        _$_PeerMessageOperateBetween instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
+    };
+
+_$_PeerMessageControlResult _$$_PeerMessageControlResultFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageControlResult(
+      content: Map<String, int>.from(json['content'] as Map),
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String?,
+      tag: json['tag'] as String?,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.controlResult,
+      timestamp: json['timestamp'] as int,
+    );
+
+Map<String, dynamic> _$$_PeerMessageControlResultToJson(
+        _$_PeerMessageControlResult instance) =>
     <String, dynamic>{
       'content': instance.content,
       'sender_identity': instance.senderIdentity,

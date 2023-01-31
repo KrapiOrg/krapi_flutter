@@ -93,7 +93,12 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   }
 
   void send(String id, PeerMessage message) {
-    peerMap[id]!.send(message);
+    peerMap[id]!.send(
+      message.copyWith(
+        receiverIdentity: id,
+        tag: message.tag ?? const Uuid().v4(),
+      ),
+    );
   }
 
   Future<PeerMessage> submit(
@@ -152,6 +157,10 @@ class PeerManager extends StateNotifier<PeerManagerState> {
 
   Future<PeerState> stateOfPeer(String peerId) async {
     return await peerMap[peerId]?.state ?? PeerState.unknown;
+  }
+
+  Future<PeerMessage> waitForMessageOfType(PeerMessageType type) async {
+    return messages.firstWhere((e) => e.type == type);
   }
 }
 

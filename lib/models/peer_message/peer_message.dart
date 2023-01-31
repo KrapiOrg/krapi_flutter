@@ -40,6 +40,11 @@ enum PeerMessageType {
   transactionsInResponse,
   transactionsOutRequest,
   transactionsOutResponse,
+  controlPing,
+  controlStarted,
+  controlStopped,
+  controlOperateBetween,
+  controlResult,
 }
 
 abstract class KrapiMessageInterface {
@@ -210,7 +215,6 @@ class PeerMessage with _$PeerMessage {
     @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageSetTransactionStatus;
-
   const factory PeerMessage.transactionsInRequest({
     required String content,
     required String senderIdentity,
@@ -243,5 +247,46 @@ class PeerMessage with _$PeerMessage {
     @Default(PeerMessageType.transactionsOutResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsOutResponse;
+  const factory PeerMessage.controlPing({
+    required String content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlPing) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageControlPing;
+  const factory PeerMessage.controlStarted({
+    dynamic content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlStarted) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageControlStarted;
+  const factory PeerMessage.controlStopped({
+    dynamic content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlStopped) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageControlStopped;
+  const factory PeerMessage.controlOperateBetween({
+    required Map<String, int> content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlStopped) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageOperateBetween;
+  const factory PeerMessage.controlResult({
+    required Map<String, int> content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlResult) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageControlResult;
+
   factory PeerMessage.fromJson(Map<String, dynamic> json) => _$PeerMessageFromJson(json);
 }
