@@ -198,11 +198,11 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   }
 }
 
-final identityProvider = Provider<String>(
+final identityProvider = Provider.autoDispose<String>(
   (_) => throw UnimplementedError('Override identityProvider with an identity'),
 );
 
-final peerManagerProvider = FutureProvider<PeerManager>(
+final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
   (ref) async {
     final identity = ref.watch(identityProvider);
     return await PeerManager.create(identity);
