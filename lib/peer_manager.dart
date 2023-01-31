@@ -212,7 +212,11 @@ final identityProvider = Provider.autoDispose<String>(
 final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
   (ref) async {
     final identity = ref.watch(identityProvider);
-    return await PeerManager.create(identity);
+    final manager = await PeerManager.create(identity);
+    ref.onDispose(() {
+      manager.closeConnections();
+    });
+    return manager;
   },
   dependencies: [identityProvider],
 );
