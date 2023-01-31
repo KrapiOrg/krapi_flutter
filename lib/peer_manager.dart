@@ -196,6 +196,13 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     removeListener();
     return peerIds;
   }
+
+  void closeConnections() {
+    for (final peer in peerMap.values) {
+      peer.dispose();
+    }
+    signalingClient.dispose();
+  }
 }
 
 final identityProvider = Provider.autoDispose<String>(
