@@ -197,11 +197,18 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     return peerIds;
   }
 
-  void closeConnections() {
+  void _closeConnections() {
     for (final peer in peerMap.values) {
       peer.dispose();
     }
     signalingClient.dispose();
+  }
+
+  @override
+  void dispose() async {
+    _closeConnections();
+    await messages.close();
+    super.dispose();
   }
 }
 
@@ -210,14 +217,7 @@ final identityProvider = Provider.autoDispose<String>(
 );
 
 final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
-  (ref) async {
-    final identity = ref.watch(identityProvider);
-    final manager = await PeerManager.create(identity);
-    ref.onDispose(() {
-      manager.closeConnections();
-    });
-    return manager;
-  },
+  (ref) async => await PeerManager.create(ref.watch(identityProvider)),
   dependencies: [identityProvider],
 );
 

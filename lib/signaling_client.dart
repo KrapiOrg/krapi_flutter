@@ -11,11 +11,14 @@ class SignalingClient {
   late final String _identity;
   late final IOWebSocketChannel _ws;
   final _subject = BehaviorSubject<SignalingMessage>();
+  late final StreamSubscription _subscription;
 
   Future<void> init(String? identity) async {
     _ws = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
 
-    _ws.stream.map((e) => SignalingMessage.fromJson(e)).pipe(_subject.sink);
+    _subscription = _ws.stream.listen(
+      (e) => SignalingMessage.fromJson(e),
+    );
 
     _identity = identity ?? const Uuid().v4();
 
@@ -53,6 +56,8 @@ class SignalingClient {
   }
 
   void dispose() {
+    _ws.innerWebSocket?.close();
+    _subscription.cancel();
     _subject.close();
   }
 
