@@ -251,7 +251,7 @@ class PeerMessage with _$PeerMessage {
     required int timestamp,
   }) = _PeerMessageTransactionsOutResponse;
   const factory PeerMessage.controlIsStartingPing({
-    required String content,
+    dynamic content,
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
@@ -259,7 +259,7 @@ class PeerMessage with _$PeerMessage {
     required int timestamp,
   }) = _PeerMessageControlIsStartingPing;
   const factory PeerMessage.controlIsEndingPing({
-    required String content,
+    dynamic content,
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,

@@ -533,7 +533,7 @@ Map<String, dynamic> _$$_PeerMessageTransactionsOutResponseToJson(
 _$_PeerMessageControlIsStartingPing
     _$$_PeerMessageControlIsStartingPingFromJson(Map<String, dynamic> json) =>
         _$_PeerMessageControlIsStartingPing(
-          content: json['content'] as String,
+          content: json['content'],
           senderIdentity: json['sender_identity'] as String,
           receiverIdentity: json['receiver_identity'] as String?,
           tag: json['tag'] as String?,
@@ -556,7 +556,7 @@ Map<String, dynamic> _$$_PeerMessageControlIsStartingPingToJson(
 _$_PeerMessageControlIsEndingPing _$$_PeerMessageControlIsEndingPingFromJson(
         Map<String, dynamic> json) =>
     _$_PeerMessageControlIsEndingPing(
-      content: json['content'] as String,
+      content: json['content'],
       senderIdentity: json['sender_identity'] as String,
       receiverIdentity: json['receiver_identity'] as String?,
       tag: json['tag'] as String?,

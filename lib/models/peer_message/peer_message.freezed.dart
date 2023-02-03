@@ -246,7 +246,7 @@ mixin _$PeerMessage {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -254,7 +254,7 @@ mixin _$PeerMessage {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -468,7 +468,7 @@ mixin _$PeerMessage {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -476,7 +476,7 @@ mixin _$PeerMessage {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -690,7 +690,7 @@ mixin _$PeerMessage {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -698,7 +698,7 @@ mixin _$PeerMessage {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1253,7 +1253,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1261,7 +1261,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1479,7 +1479,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1487,7 +1487,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1705,7 +1705,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -1713,7 +1713,7 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2261,7 +2261,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2269,7 +2269,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2487,7 +2487,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2495,7 +2495,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2713,7 +2713,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -2721,7 +2721,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3279,7 +3279,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3287,7 +3287,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3505,7 +3505,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3513,7 +3513,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3731,7 +3731,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -3739,7 +3739,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4299,7 +4299,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4307,7 +4307,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4525,7 +4525,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4533,7 +4533,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4751,7 +4751,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -4759,7 +4759,7 @@ class _$_PeerMessageBlockHeadersRequest
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5320,7 +5320,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5328,7 +5328,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5546,7 +5546,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5554,7 +5554,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5772,7 +5772,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -5780,7 +5780,7 @@ class _$_PeerMessageBlockHeadersResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6338,7 +6338,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6346,7 +6346,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6564,7 +6564,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6572,7 +6572,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6790,7 +6790,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -6798,7 +6798,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7355,7 +7355,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7363,7 +7363,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7581,7 +7581,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7589,7 +7589,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7807,7 +7807,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -7815,7 +7815,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8376,7 +8376,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8384,7 +8384,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8602,7 +8602,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8610,7 +8610,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8828,7 +8828,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -8836,7 +8836,7 @@ class _$_PeerMessageBlockNotFoundResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9385,7 +9385,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9393,7 +9393,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9611,7 +9611,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9619,7 +9619,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9837,7 +9837,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -9845,7 +9845,7 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10393,7 +10393,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10401,7 +10401,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10619,7 +10619,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10627,7 +10627,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10845,7 +10845,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -10853,7 +10853,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11401,7 +11401,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11409,7 +11409,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11627,7 +11627,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11635,7 +11635,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11853,7 +11853,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -11861,7 +11861,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12417,7 +12417,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12425,7 +12425,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12643,7 +12643,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12651,7 +12651,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12869,7 +12869,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -12877,7 +12877,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13450,7 +13450,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13458,7 +13458,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13676,7 +13676,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13684,7 +13684,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13902,7 +13902,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -13910,7 +13910,7 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14468,7 +14468,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14476,7 +14476,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14694,7 +14694,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14702,7 +14702,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14920,7 +14920,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -14928,7 +14928,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15478,7 +15478,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15486,7 +15486,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15704,7 +15704,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15712,7 +15712,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15930,7 +15930,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -15938,7 +15938,7 @@ class _$_PeerMessageGetLastBlockRequest
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16499,7 +16499,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16507,7 +16507,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16725,7 +16725,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16733,7 +16733,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16951,7 +16951,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -16959,7 +16959,7 @@ class _$_PeerMessageGetLastBlockResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17521,7 +17521,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17529,7 +17529,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17747,7 +17747,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17755,7 +17755,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17973,7 +17973,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -17981,7 +17981,7 @@ class _$_PeerMessageSetTransactionStatus
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18532,7 +18532,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18540,7 +18540,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18758,7 +18758,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18766,7 +18766,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18984,7 +18984,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -18992,7 +18992,7 @@ class _$_PeerMessageTransactionsInRequest
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -19544,7 +19544,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -19552,7 +19552,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -19770,7 +19770,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -19778,7 +19778,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -19996,7 +19996,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -20004,7 +20004,7 @@ class _$_PeerMessageTransactionsInResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -20557,7 +20557,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -20565,7 +20565,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -20783,7 +20783,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -20791,7 +20791,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21009,7 +21009,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21017,7 +21017,7 @@ class _$_PeerMessageTransactionsOutRequest
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21570,7 +21570,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21578,7 +21578,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21796,7 +21796,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -21804,7 +21804,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22022,7 +22022,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22030,7 +22030,7 @@ class _$_PeerMessageTransactionsOutResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22304,7 +22304,7 @@ abstract class _$$_PeerMessageControlIsStartingPingCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String content,
+      {dynamic content,
       String senderIdentity,
       String? receiverIdentity,
       String? tag,
@@ -22324,7 +22324,7 @@ class __$$_PeerMessageControlIsStartingPingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
+    Object? content = freezed,
     Object? senderIdentity = null,
     Object? receiverIdentity = freezed,
     Object? tag = freezed,
@@ -22332,10 +22332,10 @@ class __$$_PeerMessageControlIsStartingPingCopyWithImpl<$Res>
     Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageControlIsStartingPing(
-      content: null == content
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       senderIdentity: null == senderIdentity
           ? _value.senderIdentity
           : senderIdentity // ignore: cast_nullable_to_non_nullable
@@ -22365,7 +22365,7 @@ class __$$_PeerMessageControlIsStartingPingCopyWithImpl<$Res>
 class _$_PeerMessageControlIsStartingPing
     implements _PeerMessageControlIsStartingPing {
   const _$_PeerMessageControlIsStartingPing(
-      {required this.content,
+      {this.content,
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
@@ -22377,7 +22377,7 @@ class _$_PeerMessageControlIsStartingPing
       _$$_PeerMessageControlIsStartingPingFromJson(json);
 
   @override
-  final String content;
+  final dynamic content;
   @override
   final String senderIdentity;
   @override
@@ -22400,7 +22400,7 @@ class _$_PeerMessageControlIsStartingPing
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageControlIsStartingPing &&
-            (identical(other.content, content) || other.content == content) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.senderIdentity, senderIdentity) ||
                 other.senderIdentity == senderIdentity) &&
             (identical(other.receiverIdentity, receiverIdentity) ||
@@ -22413,8 +22413,14 @@ class _$_PeerMessageControlIsStartingPing
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
-      receiverIdentity, tag, type, timestamp);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(content),
+      senderIdentity,
+      receiverIdentity,
+      tag,
+      type,
+      timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -22582,7 +22588,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22590,7 +22596,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22808,7 +22814,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -22816,7 +22822,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23034,7 +23040,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23042,7 +23048,7 @@ class _$_PeerMessageControlIsStartingPing
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23276,7 +23282,7 @@ class _$_PeerMessageControlIsStartingPing
 
 abstract class _PeerMessageControlIsStartingPing implements PeerMessage {
   const factory _PeerMessageControlIsStartingPing(
-      {required final String content,
+      {final dynamic content,
       required final String senderIdentity,
       final String? receiverIdentity,
       final String? tag,
@@ -23287,7 +23293,7 @@ abstract class _PeerMessageControlIsStartingPing implements PeerMessage {
       Map<String, dynamic> json) = _$_PeerMessageControlIsStartingPing.fromJson;
 
   @override
-  String get content;
+  dynamic get content;
   @override
   String get senderIdentity;
   @override
@@ -23315,7 +23321,7 @@ abstract class _$$_PeerMessageControlIsEndingPingCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String content,
+      {dynamic content,
       String senderIdentity,
       String? receiverIdentity,
       String? tag,
@@ -23335,7 +23341,7 @@ class __$$_PeerMessageControlIsEndingPingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
+    Object? content = freezed,
     Object? senderIdentity = null,
     Object? receiverIdentity = freezed,
     Object? tag = freezed,
@@ -23343,10 +23349,10 @@ class __$$_PeerMessageControlIsEndingPingCopyWithImpl<$Res>
     Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageControlIsEndingPing(
-      content: null == content
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       senderIdentity: null == senderIdentity
           ? _value.senderIdentity
           : senderIdentity // ignore: cast_nullable_to_non_nullable
@@ -23376,7 +23382,7 @@ class __$$_PeerMessageControlIsEndingPingCopyWithImpl<$Res>
 class _$_PeerMessageControlIsEndingPing
     implements _PeerMessageControlIsEndingPing {
   const _$_PeerMessageControlIsEndingPing(
-      {required this.content,
+      {this.content,
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
@@ -23388,7 +23394,7 @@ class _$_PeerMessageControlIsEndingPing
       _$$_PeerMessageControlIsEndingPingFromJson(json);
 
   @override
-  final String content;
+  final dynamic content;
   @override
   final String senderIdentity;
   @override
@@ -23411,7 +23417,7 @@ class _$_PeerMessageControlIsEndingPing
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageControlIsEndingPing &&
-            (identical(other.content, content) || other.content == content) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.senderIdentity, senderIdentity) ||
                 other.senderIdentity == senderIdentity) &&
             (identical(other.receiverIdentity, receiverIdentity) ||
@@ -23424,8 +23430,14 @@ class _$_PeerMessageControlIsEndingPing
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
-      receiverIdentity, tag, type, timestamp);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(content),
+      senderIdentity,
+      receiverIdentity,
+      tag,
+      type,
+      timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -23592,7 +23604,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23600,7 +23612,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23818,7 +23830,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -23826,7 +23838,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24044,7 +24056,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24052,7 +24064,7 @@ class _$_PeerMessageControlIsEndingPing
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24286,7 +24298,7 @@ class _$_PeerMessageControlIsEndingPing
 
 abstract class _PeerMessageControlIsEndingPing implements PeerMessage {
   const factory _PeerMessageControlIsEndingPing(
-      {required final String content,
+      {final dynamic content,
       required final String senderIdentity,
       final String? receiverIdentity,
       final String? tag,
@@ -24297,7 +24309,7 @@ abstract class _PeerMessageControlIsEndingPing implements PeerMessage {
       _$_PeerMessageControlIsEndingPing.fromJson;
 
   @override
-  String get content;
+  dynamic get content;
   @override
   String get senderIdentity;
   @override
@@ -24605,7 +24617,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24613,7 +24625,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24831,7 +24843,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -24839,7 +24851,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25057,7 +25069,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25065,7 +25077,7 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25618,7 +25630,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25626,7 +25638,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25844,7 +25856,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -25852,7 +25864,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26070,7 +26082,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26078,7 +26090,7 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26638,7 +26650,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26646,7 +26658,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26864,7 +26876,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -26872,7 +26884,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27090,7 +27102,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27098,7 +27110,7 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27657,7 +27669,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27665,7 +27677,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27883,7 +27895,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -27891,7 +27903,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28109,7 +28121,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28117,7 +28129,7 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28674,7 +28686,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28682,7 +28694,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28900,7 +28912,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -28908,7 +28920,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29126,7 +29138,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29134,7 +29146,7 @@ class _$_PeerMessageIsControlStartedRequest
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29687,7 +29699,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)
         transactionsOutResponse,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29695,7 +29707,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)
         controlIsStartingPing,
     required TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29913,7 +29925,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)?
         transactionsOutResponse,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -29921,7 +29933,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)?
         controlIsStartingPing,
     TResult? Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -30139,7 +30151,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)?
         transactionsOutResponse,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
@@ -30147,7 +30159,7 @@ class _$_PeerMessageIsControlStartedResponse
             int timestamp)?
         controlIsStartingPing,
     TResult Function(
-            String content,
+            dynamic content,
             String senderIdentity,
             String? receiverIdentity,
             String? tag,
