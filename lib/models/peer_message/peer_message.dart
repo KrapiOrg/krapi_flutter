@@ -40,7 +40,8 @@ enum PeerMessageType {
   transactionsInResponse,
   transactionsOutRequest,
   transactionsOutResponse,
-  controlPing,
+  controlIsStartingPing,
+  controlIsEndingPing,
   controlStarted,
   controlStopped,
   controlOperateBetween,
@@ -249,14 +250,22 @@ class PeerMessage with _$PeerMessage {
     @Default(PeerMessageType.transactionsOutResponse) PeerMessageType type,
     required int timestamp,
   }) = _PeerMessageTransactionsOutResponse;
-  const factory PeerMessage.controlPing({
+  const factory PeerMessage.controlIsStartingPing({
     required String content,
     required String senderIdentity,
     String? receiverIdentity,
     String? tag,
-    @Default(PeerMessageType.controlPing) PeerMessageType type,
+    @Default(PeerMessageType.controlIsStartingPing) PeerMessageType type,
     required int timestamp,
-  }) = _PeerMessageControlPing;
+  }) = _PeerMessageControlIsStartingPing;
+  const factory PeerMessage.controlIsEndingPing({
+    required String content,
+    required String senderIdentity,
+    String? receiverIdentity,
+    String? tag,
+    @Default(PeerMessageType.controlIsEndingPing) PeerMessageType type,
+    required int timestamp,
+  }) = _PeerMessageControlIsEndingPing;
   const factory PeerMessage.controlStarted({
     dynamic content,
     required String senderIdentity,

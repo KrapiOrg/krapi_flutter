@@ -58,8 +58,10 @@ PeerMessage _$PeerMessageFromJson(Map<String, dynamic> json) {
       return _PeerMessageTransactionsOutRequest.fromJson(json);
     case 'transactions_out_response':
       return _PeerMessageTransactionsOutResponse.fromJson(json);
-    case 'control_ping':
-      return _PeerMessageControlPing.fromJson(json);
+    case 'control_is_starting_ping':
+      return _PeerMessageControlIsStartingPing.fromJson(json);
+    case 'control_is_ending_ping':
+      return _PeerMessageControlIsEndingPing.fromJson(json);
     case 'control_started':
       return _PeerMessageControlStarted.fromJson(json);
     case 'control_stopped':
@@ -250,7 +252,15 @@ mixin _$PeerMessage {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -464,7 +474,15 @@ mixin _$PeerMessage {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -678,7 +696,15 @@ mixin _$PeerMessage {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -768,7 +794,10 @@ mixin _$PeerMessage {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -813,7 +842,10 @@ mixin _$PeerMessage {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -857,7 +889,10 @@ mixin _$PeerMessage {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -1224,7 +1259,15 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -1442,7 +1485,15 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -1660,7 +1711,15 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -1757,7 +1816,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -1805,7 +1867,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -1852,7 +1917,10 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -2199,7 +2267,15 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -2417,7 +2493,15 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -2635,7 +2719,15 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -2732,7 +2824,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -2780,7 +2875,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -2827,7 +2925,10 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -3184,7 +3285,15 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -3402,7 +3511,15 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -3620,7 +3737,15 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -3717,7 +3842,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -3765,7 +3893,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -3812,7 +3943,10 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -4171,7 +4305,15 @@ class _$_PeerMessageBlockHeadersRequest
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -4389,7 +4531,15 @@ class _$_PeerMessageBlockHeadersRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -4607,7 +4757,15 @@ class _$_PeerMessageBlockHeadersRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -4704,7 +4862,10 @@ class _$_PeerMessageBlockHeadersRequest
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -4752,7 +4913,10 @@ class _$_PeerMessageBlockHeadersRequest
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -4799,7 +4963,10 @@ class _$_PeerMessageBlockHeadersRequest
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -5159,7 +5326,15 @@ class _$_PeerMessageBlockHeadersResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -5377,7 +5552,15 @@ class _$_PeerMessageBlockHeadersResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -5595,7 +5778,15 @@ class _$_PeerMessageBlockHeadersResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -5692,7 +5883,10 @@ class _$_PeerMessageBlockHeadersResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -5740,7 +5934,10 @@ class _$_PeerMessageBlockHeadersResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -5787,7 +5984,10 @@ class _$_PeerMessageBlockHeadersResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -6144,7 +6344,15 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -6362,7 +6570,15 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -6580,7 +6796,15 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -6677,7 +6901,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -6725,7 +6952,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -6772,7 +7002,10 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -7128,7 +7361,15 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -7346,7 +7587,15 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -7564,7 +7813,15 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -7661,7 +7918,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -7709,7 +7969,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -7756,7 +8019,10 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -8116,7 +8382,15 @@ class _$_PeerMessageBlockNotFoundResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -8334,7 +8608,15 @@ class _$_PeerMessageBlockNotFoundResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -8552,7 +8834,15 @@ class _$_PeerMessageBlockNotFoundResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -8649,7 +8939,10 @@ class _$_PeerMessageBlockNotFoundResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -8697,7 +8990,10 @@ class _$_PeerMessageBlockNotFoundResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -8744,7 +9040,10 @@ class _$_PeerMessageBlockNotFoundResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -9092,7 +9391,15 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -9310,7 +9617,15 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -9528,7 +9843,15 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -9625,7 +9948,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -9673,7 +9999,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -9720,7 +10049,10 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -10067,7 +10399,15 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -10285,7 +10625,15 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -10503,7 +10851,15 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -10600,7 +10956,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -10648,7 +11007,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -10695,7 +11057,10 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -11042,7 +11407,15 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -11260,7 +11633,15 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -11478,7 +11859,15 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -11575,7 +11964,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -11623,7 +12015,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -11670,7 +12065,10 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -12025,7 +12423,15 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -12243,7 +12649,15 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -12461,7 +12875,15 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -12558,7 +12980,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -12606,7 +13031,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -12653,7 +13081,10 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -13025,7 +13456,15 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -13243,7 +13682,15 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -13461,7 +13908,15 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -13558,7 +14013,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -13606,7 +14064,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -13653,7 +14114,10 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -14010,7 +14474,15 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -14228,7 +14700,15 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -14446,7 +14926,15 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -14543,7 +15031,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -14591,7 +15082,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -14638,7 +15132,10 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -14987,7 +15484,15 @@ class _$_PeerMessageGetLastBlockRequest
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -15205,7 +15710,15 @@ class _$_PeerMessageGetLastBlockRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -15423,7 +15936,15 @@ class _$_PeerMessageGetLastBlockRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -15520,7 +16041,10 @@ class _$_PeerMessageGetLastBlockRequest
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -15568,7 +16092,10 @@ class _$_PeerMessageGetLastBlockRequest
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -15615,7 +16142,10 @@ class _$_PeerMessageGetLastBlockRequest
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -15975,7 +16505,15 @@ class _$_PeerMessageGetLastBlockResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -16193,7 +16731,15 @@ class _$_PeerMessageGetLastBlockResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -16411,7 +16957,15 @@ class _$_PeerMessageGetLastBlockResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -16508,7 +17062,10 @@ class _$_PeerMessageGetLastBlockResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -16556,7 +17113,10 @@ class _$_PeerMessageGetLastBlockResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -16603,7 +17163,10 @@ class _$_PeerMessageGetLastBlockResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -16964,7 +17527,15 @@ class _$_PeerMessageSetTransactionStatus
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -17182,7 +17753,15 @@ class _$_PeerMessageSetTransactionStatus
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -17400,7 +17979,15 @@ class _$_PeerMessageSetTransactionStatus
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -17497,7 +18084,10 @@ class _$_PeerMessageSetTransactionStatus
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -17545,7 +18135,10 @@ class _$_PeerMessageSetTransactionStatus
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -17592,7 +18185,10 @@ class _$_PeerMessageSetTransactionStatus
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -17942,7 +18538,15 @@ class _$_PeerMessageTransactionsInRequest
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -18160,7 +18764,15 @@ class _$_PeerMessageTransactionsInRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -18378,7 +18990,15 @@ class _$_PeerMessageTransactionsInRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -18475,7 +19095,10 @@ class _$_PeerMessageTransactionsInRequest
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -18523,7 +19146,10 @@ class _$_PeerMessageTransactionsInRequest
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -18570,7 +19196,10 @@ class _$_PeerMessageTransactionsInRequest
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -18921,7 +19550,15 @@ class _$_PeerMessageTransactionsInResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -19139,7 +19776,15 @@ class _$_PeerMessageTransactionsInResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -19357,7 +20002,15 @@ class _$_PeerMessageTransactionsInResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -19454,7 +20107,10 @@ class _$_PeerMessageTransactionsInResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -19502,7 +20158,10 @@ class _$_PeerMessageTransactionsInResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -19549,7 +20208,10 @@ class _$_PeerMessageTransactionsInResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -19901,7 +20563,15 @@ class _$_PeerMessageTransactionsOutRequest
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -20119,7 +20789,15 @@ class _$_PeerMessageTransactionsOutRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -20337,7 +21015,15 @@ class _$_PeerMessageTransactionsOutRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -20434,7 +21120,10 @@ class _$_PeerMessageTransactionsOutRequest
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -20482,7 +21171,10 @@ class _$_PeerMessageTransactionsOutRequest
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -20529,7 +21221,10 @@ class _$_PeerMessageTransactionsOutRequest
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -20881,7 +21576,15 @@ class _$_PeerMessageTransactionsOutResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -21099,7 +21802,15 @@ class _$_PeerMessageTransactionsOutResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -21317,7 +22028,15 @@ class _$_PeerMessageTransactionsOutResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -21414,7 +22133,10 @@ class _$_PeerMessageTransactionsOutResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -21462,7 +22184,10 @@ class _$_PeerMessageTransactionsOutResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -21509,7 +22234,10 @@ class _$_PeerMessageTransactionsOutResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -21567,11 +22295,12 @@ abstract class _PeerMessageTransactionsOutResponse implements PeerMessage {
 }
 
 /// @nodoc
-abstract class _$$_PeerMessageControlPingCopyWith<$Res>
+abstract class _$$_PeerMessageControlIsStartingPingCopyWith<$Res>
     implements $PeerMessageCopyWith<$Res> {
-  factory _$$_PeerMessageControlPingCopyWith(_$_PeerMessageControlPing value,
-          $Res Function(_$_PeerMessageControlPing) then) =
-      __$$_PeerMessageControlPingCopyWithImpl<$Res>;
+  factory _$$_PeerMessageControlIsStartingPingCopyWith(
+          _$_PeerMessageControlIsStartingPing value,
+          $Res Function(_$_PeerMessageControlIsStartingPing) then) =
+      __$$_PeerMessageControlIsStartingPingCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -21584,11 +22313,12 @@ abstract class _$$_PeerMessageControlPingCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PeerMessageControlPingCopyWithImpl<$Res>
-    extends _$PeerMessageCopyWithImpl<$Res, _$_PeerMessageControlPing>
-    implements _$$_PeerMessageControlPingCopyWith<$Res> {
-  __$$_PeerMessageControlPingCopyWithImpl(_$_PeerMessageControlPing _value,
-      $Res Function(_$_PeerMessageControlPing) _then)
+class __$$_PeerMessageControlIsStartingPingCopyWithImpl<$Res>
+    extends _$PeerMessageCopyWithImpl<$Res, _$_PeerMessageControlIsStartingPing>
+    implements _$$_PeerMessageControlIsStartingPingCopyWith<$Res> {
+  __$$_PeerMessageControlIsStartingPingCopyWithImpl(
+      _$_PeerMessageControlIsStartingPing _value,
+      $Res Function(_$_PeerMessageControlIsStartingPing) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -21601,7 +22331,7 @@ class __$$_PeerMessageControlPingCopyWithImpl<$Res>
     Object? type = null,
     Object? timestamp = null,
   }) {
-    return _then(_$_PeerMessageControlPing(
+    return _then(_$_PeerMessageControlIsStartingPing(
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -21632,17 +22362,19 @@ class __$$_PeerMessageControlPingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PeerMessageControlPing implements _PeerMessageControlPing {
-  const _$_PeerMessageControlPing(
+class _$_PeerMessageControlIsStartingPing
+    implements _PeerMessageControlIsStartingPing {
+  const _$_PeerMessageControlIsStartingPing(
       {required this.content,
       required this.senderIdentity,
       this.receiverIdentity,
       this.tag,
-      this.type = PeerMessageType.controlPing,
+      this.type = PeerMessageType.controlIsStartingPing,
       required this.timestamp});
 
-  factory _$_PeerMessageControlPing.fromJson(Map<String, dynamic> json) =>
-      _$$_PeerMessageControlPingFromJson(json);
+  factory _$_PeerMessageControlIsStartingPing.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PeerMessageControlIsStartingPingFromJson(json);
 
   @override
   final String content;
@@ -21660,14 +22392,14 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
 
   @override
   String toString() {
-    return 'PeerMessage.controlPing(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
+    return 'PeerMessage.controlIsStartingPing(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PeerMessageControlPing &&
+            other is _$_PeerMessageControlIsStartingPing &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.senderIdentity, senderIdentity) ||
                 other.senderIdentity == senderIdentity) &&
@@ -21687,9 +22419,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PeerMessageControlPingCopyWith<_$_PeerMessageControlPing> get copyWith =>
-      __$$_PeerMessageControlPingCopyWithImpl<_$_PeerMessageControlPing>(
-          this, _$identity);
+  _$$_PeerMessageControlIsStartingPingCopyWith<
+          _$_PeerMessageControlIsStartingPing>
+      get copyWith => __$$_PeerMessageControlIsStartingPingCopyWithImpl<
+          _$_PeerMessageControlIsStartingPing>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -21855,7 +22588,15 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -21905,7 +22646,7 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             int timestamp)
         isControlStartedResponse,
   }) {
-    return controlPing(
+    return controlIsStartingPing(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
@@ -22073,7 +22814,15 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -22123,7 +22872,7 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             int timestamp)?
         isControlStartedResponse,
   }) {
-    return controlPing?.call(
+    return controlIsStartingPing?.call(
         content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
@@ -22291,7 +23040,15 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -22342,8 +23099,8 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
         isControlStartedResponse,
     required TResult orElse(),
   }) {
-    if (controlPing != null) {
-      return controlPing(
+    if (controlIsStartingPing != null) {
+      return controlIsStartingPing(
           content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
@@ -22388,7 +23145,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -22399,7 +23159,7 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
     required TResult Function(_PeerMessageIsControlStartedResponse value)
         isControlStartedResponse,
   }) {
-    return controlPing(this);
+    return controlIsStartingPing(this);
   }
 
   @override
@@ -22436,7 +23196,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -22446,7 +23209,7 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
     TResult? Function(_PeerMessageIsControlStartedResponse value)?
         isControlStartedResponse,
   }) {
-    return controlPing?.call(this);
+    return controlIsStartingPing?.call(this);
   }
 
   @override
@@ -22483,7 +23246,10 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -22494,31 +23260,31 @@ class _$_PeerMessageControlPing implements _PeerMessageControlPing {
         isControlStartedResponse,
     required TResult orElse(),
   }) {
-    if (controlPing != null) {
-      return controlPing(this);
+    if (controlIsStartingPing != null) {
+      return controlIsStartingPing(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PeerMessageControlPingToJson(
+    return _$$_PeerMessageControlIsStartingPingToJson(
       this,
     );
   }
 }
 
-abstract class _PeerMessageControlPing implements PeerMessage {
-  const factory _PeerMessageControlPing(
+abstract class _PeerMessageControlIsStartingPing implements PeerMessage {
+  const factory _PeerMessageControlIsStartingPing(
       {required final String content,
       required final String senderIdentity,
       final String? receiverIdentity,
       final String? tag,
       final PeerMessageType type,
-      required final int timestamp}) = _$_PeerMessageControlPing;
+      required final int timestamp}) = _$_PeerMessageControlIsStartingPing;
 
-  factory _PeerMessageControlPing.fromJson(Map<String, dynamic> json) =
-      _$_PeerMessageControlPing.fromJson;
+  factory _PeerMessageControlIsStartingPing.fromJson(
+      Map<String, dynamic> json) = _$_PeerMessageControlIsStartingPing.fromJson;
 
   @override
   String get content;
@@ -22534,8 +23300,1018 @@ abstract class _PeerMessageControlPing implements PeerMessage {
   int get timestamp;
   @override
   @JsonKey(ignore: true)
-  _$$_PeerMessageControlPingCopyWith<_$_PeerMessageControlPing> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PeerMessageControlIsStartingPingCopyWith<
+          _$_PeerMessageControlIsStartingPing>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PeerMessageControlIsEndingPingCopyWith<$Res>
+    implements $PeerMessageCopyWith<$Res> {
+  factory _$$_PeerMessageControlIsEndingPingCopyWith(
+          _$_PeerMessageControlIsEndingPing value,
+          $Res Function(_$_PeerMessageControlIsEndingPing) then) =
+      __$$_PeerMessageControlIsEndingPingCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String content,
+      String senderIdentity,
+      String? receiverIdentity,
+      String? tag,
+      PeerMessageType type,
+      int timestamp});
+}
+
+/// @nodoc
+class __$$_PeerMessageControlIsEndingPingCopyWithImpl<$Res>
+    extends _$PeerMessageCopyWithImpl<$Res, _$_PeerMessageControlIsEndingPing>
+    implements _$$_PeerMessageControlIsEndingPingCopyWith<$Res> {
+  __$$_PeerMessageControlIsEndingPingCopyWithImpl(
+      _$_PeerMessageControlIsEndingPing _value,
+      $Res Function(_$_PeerMessageControlIsEndingPing) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = freezed,
+    Object? tag = freezed,
+    Object? type = null,
+    Object? timestamp = null,
+  }) {
+    return _then(_$_PeerMessageControlIsEndingPing(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: freezed == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tag: freezed == tag
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PeerMessageControlIsEndingPing
+    implements _PeerMessageControlIsEndingPing {
+  const _$_PeerMessageControlIsEndingPing(
+      {required this.content,
+      required this.senderIdentity,
+      this.receiverIdentity,
+      this.tag,
+      this.type = PeerMessageType.controlIsEndingPing,
+      required this.timestamp});
+
+  factory _$_PeerMessageControlIsEndingPing.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PeerMessageControlIsEndingPingFromJson(json);
+
+  @override
+  final String content;
+  @override
+  final String senderIdentity;
+  @override
+  final String? receiverIdentity;
+  @override
+  final String? tag;
+  @override
+  @JsonKey()
+  final PeerMessageType type;
+  @override
+  final int timestamp;
+
+  @override
+  String toString() {
+    return 'PeerMessage.controlIsEndingPing(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PeerMessageControlIsEndingPing &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PeerMessageControlIsEndingPingCopyWith<_$_PeerMessageControlIsEndingPing>
+      get copyWith => __$$_PeerMessageControlIsEndingPingCopyWithImpl<
+          _$_PeerMessageControlIsEndingPing>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerTypeRequest,
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerTypeResponse,
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addTransaction,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersRequest,
+    required TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockHeadersResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockResponse,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockNotFoundResponse,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        peerStateRequest,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateResponse,
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        peerStateUpdate,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        addBlock,
+    required TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)
+        blockRejected,
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        blockAccepted,
+    required TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)
+        getLastBlockRequest,
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        setTransactionStatus,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsInResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutRequest,
+    required TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        transactionsOutResponse,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStarted,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlStopped,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlOperateBetween,
+    required TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlResult,
+    required TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedRequest,
+    required TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        isControlStartedResponse,
+  }) {
+    return controlIsEndingPing(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult? Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult? Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult? Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult? Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult? Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult? Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+  }) {
+    return controlIsEndingPing?.call(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerTypeRequest,
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerTypeResponse,
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addTransaction,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersRequest,
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockHeadersResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockResponse,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockNotFoundResponse,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        peerStateRequest,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateResponse,
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        peerStateUpdate,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        addBlock,
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            dynamic content,
+            int timestamp)?
+        blockRejected,
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        blockAccepted,
+    TResult Function(String senderIdentity, String? receiverIdentity,
+            String? tag, PeerMessageType type, dynamic content, int timestamp)?
+        getLastBlockRequest,
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        getLastBlockResponse,
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        setTransactionStatus,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsInResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutRequest,
+    TResult Function(
+            int content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        transactionsOutResponse,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStarted,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlStopped,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlOperateBetween,
+    TResult Function(
+            Map<String, int> content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlResult,
+    TResult Function(
+            dynamic content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedRequest,
+    TResult Function(
+            bool content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (controlIsEndingPing != null) {
+      return controlIsEndingPing(
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerMessagePeerTypeRequest value)
+        peerTypeRequest,
+    required TResult Function(_PeerMessagePeerTypeResponse value)
+        peerTypeResponse,
+    required TResult Function(_PeerMessageAddTransaction value) addTransaction,
+    required TResult Function(_PeerMessageBlockHeadersRequest value)
+        blockHeadersRequest,
+    required TResult Function(_PeerMessageBlockHeadersResponse value)
+        blockHeadersResponse,
+    required TResult Function(_PeerMessageBlockRequest value) blockRequest,
+    required TResult Function(_PeerMessageBlockResponse value) blockResponse,
+    required TResult Function(_PeerMessageBlockNotFoundResponse value)
+        blockNotFoundResponse,
+    required TResult Function(_PeerMessagePeerStateRequest value)
+        peerStateRequest,
+    required TResult Function(_PeerMessagePeerStateResponse value)
+        peerStateResponse,
+    required TResult Function(_PeerMessagePeerStateUpdate value)
+        peerStateUpdate,
+    required TResult Function(_PeerMessageAddBlock value) addBlock,
+    required TResult Function(_PeerMessageBlockRejected value) blockRejected,
+    required TResult Function(_PeerMessageBlockAccepted value) blockAccepted,
+    required TResult Function(_PeerMessageGetLastBlockRequest value)
+        getLastBlockRequest,
+    required TResult Function(_PeerMessageGetLastBlockResponse value)
+        getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
+    required TResult Function(_PeerMessageTransactionsInRequest value)
+        transactionsInRequest,
+    required TResult Function(_PeerMessageTransactionsInResponse value)
+        transactionsInResponse,
+    required TResult Function(_PeerMessageTransactionsOutRequest value)
+        transactionsOutRequest,
+    required TResult Function(_PeerMessageTransactionsOutResponse value)
+        transactionsOutResponse,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
+    required TResult Function(_PeerMessageControlStarted value) controlStarted,
+    required TResult Function(_PeerMessageControlStopped value) controlStopped,
+    required TResult Function(_PeerMessageOperateBetween value)
+        controlOperateBetween,
+    required TResult Function(_PeerMessageControlResult value) controlResult,
+    required TResult Function(_PeerMessageIsControlStartedRequest value)
+        isControlStartedRequest,
+    required TResult Function(_PeerMessageIsControlStartedResponse value)
+        isControlStartedResponse,
+  }) {
+    return controlIsEndingPing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult? Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult? Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult? Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult? Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult? Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult? Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult? Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult? Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult? Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult? Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult? Function(_PeerMessageAddBlock value)? addBlock,
+    TResult? Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult? Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult? Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult? Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult? Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult? Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult? Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult? Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
+    TResult? Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult? Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult? Function(_PeerMessageControlResult value)? controlResult,
+    TResult? Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult? Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+  }) {
+    return controlIsEndingPing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult Function(_PeerMessageAddBlock value)? addBlock,
+    TResult Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    TResult Function(_PeerMessageTransactionsInRequest value)?
+        transactionsInRequest,
+    TResult Function(_PeerMessageTransactionsInResponse value)?
+        transactionsInResponse,
+    TResult Function(_PeerMessageTransactionsOutRequest value)?
+        transactionsOutRequest,
+    TResult Function(_PeerMessageTransactionsOutResponse value)?
+        transactionsOutResponse,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
+    TResult Function(_PeerMessageControlStarted value)? controlStarted,
+    TResult Function(_PeerMessageControlStopped value)? controlStopped,
+    TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
+    TResult Function(_PeerMessageControlResult value)? controlResult,
+    TResult Function(_PeerMessageIsControlStartedRequest value)?
+        isControlStartedRequest,
+    TResult Function(_PeerMessageIsControlStartedResponse value)?
+        isControlStartedResponse,
+    required TResult orElse(),
+  }) {
+    if (controlIsEndingPing != null) {
+      return controlIsEndingPing(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PeerMessageControlIsEndingPingToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PeerMessageControlIsEndingPing implements PeerMessage {
+  const factory _PeerMessageControlIsEndingPing(
+      {required final String content,
+      required final String senderIdentity,
+      final String? receiverIdentity,
+      final String? tag,
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageControlIsEndingPing;
+
+  factory _PeerMessageControlIsEndingPing.fromJson(Map<String, dynamic> json) =
+      _$_PeerMessageControlIsEndingPing.fromJson;
+
+  @override
+  String get content;
+  @override
+  String get senderIdentity;
+  @override
+  String? get receiverIdentity;
+  @override
+  String? get tag;
+  @override
+  PeerMessageType get type;
+  @override
+  int get timestamp;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PeerMessageControlIsEndingPingCopyWith<_$_PeerMessageControlIsEndingPing>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -22835,7 +24611,15 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -23053,7 +24837,15 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -23271,7 +25063,15 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -23368,7 +25168,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -23416,7 +25219,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -23463,7 +25269,10 @@ class _$_PeerMessageControlStarted implements _PeerMessageControlStarted {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -23815,7 +25624,15 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -24033,7 +25850,15 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -24251,7 +26076,15 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -24348,7 +26181,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -24396,7 +26232,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -24443,7 +26282,10 @@ class _$_PeerMessageControlStopped implements _PeerMessageControlStopped {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -24802,7 +26644,15 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -25020,7 +26870,15 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -25238,7 +27096,15 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -25335,7 +27201,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -25383,7 +27252,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -25430,7 +27302,10 @@ class _$_PeerMessageOperateBetween implements _PeerMessageOperateBetween {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -25788,7 +27663,15 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -26006,7 +27889,15 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -26224,7 +28115,15 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -26321,7 +28220,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -26369,7 +28271,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -26416,7 +28321,10 @@ class _$_PeerMessageControlResult implements _PeerMessageControlResult {
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -26772,7 +28680,15 @@ class _$_PeerMessageIsControlStartedRequest
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -26990,7 +28906,15 @@ class _$_PeerMessageIsControlStartedRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -27208,7 +29132,15 @@ class _$_PeerMessageIsControlStartedRequest
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -27305,7 +29237,10 @@ class _$_PeerMessageIsControlStartedRequest
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -27353,7 +29288,10 @@ class _$_PeerMessageIsControlStartedRequest
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -27400,7 +29338,10 @@ class _$_PeerMessageIsControlStartedRequest
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -27752,7 +29693,15 @@ class _$_PeerMessageIsControlStartedResponse
             String? tag,
             PeerMessageType type,
             int timestamp)
-        controlPing,
+        controlIsStartingPing,
+    required TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)
+        controlIsEndingPing,
     required TResult Function(
             dynamic content,
             String senderIdentity,
@@ -27970,7 +29919,15 @@ class _$_PeerMessageIsControlStartedResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult? Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult? Function(
             dynamic content,
             String senderIdentity,
@@ -28188,7 +30145,15 @@ class _$_PeerMessageIsControlStartedResponse
             String? tag,
             PeerMessageType type,
             int timestamp)?
-        controlPing,
+        controlIsStartingPing,
+    TResult Function(
+            String content,
+            String senderIdentity,
+            String? receiverIdentity,
+            String? tag,
+            PeerMessageType type,
+            int timestamp)?
+        controlIsEndingPing,
     TResult Function(
             dynamic content,
             String senderIdentity,
@@ -28285,7 +30250,10 @@ class _$_PeerMessageIsControlStartedResponse
         transactionsOutRequest,
     required TResult Function(_PeerMessageTransactionsOutResponse value)
         transactionsOutResponse,
-    required TResult Function(_PeerMessageControlPing value) controlPing,
+    required TResult Function(_PeerMessageControlIsStartingPing value)
+        controlIsStartingPing,
+    required TResult Function(_PeerMessageControlIsEndingPing value)
+        controlIsEndingPing,
     required TResult Function(_PeerMessageControlStarted value) controlStarted,
     required TResult Function(_PeerMessageControlStopped value) controlStopped,
     required TResult Function(_PeerMessageOperateBetween value)
@@ -28333,7 +30301,10 @@ class _$_PeerMessageIsControlStartedResponse
         transactionsOutRequest,
     TResult? Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult? Function(_PeerMessageControlPing value)? controlPing,
+    TResult? Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult? Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult? Function(_PeerMessageControlStarted value)? controlStarted,
     TResult? Function(_PeerMessageControlStopped value)? controlStopped,
     TResult? Function(_PeerMessageOperateBetween value)? controlOperateBetween,
@@ -28380,7 +30351,10 @@ class _$_PeerMessageIsControlStartedResponse
         transactionsOutRequest,
     TResult Function(_PeerMessageTransactionsOutResponse value)?
         transactionsOutResponse,
-    TResult Function(_PeerMessageControlPing value)? controlPing,
+    TResult Function(_PeerMessageControlIsStartingPing value)?
+        controlIsStartingPing,
+    TResult Function(_PeerMessageControlIsEndingPing value)?
+        controlIsEndingPing,
     TResult Function(_PeerMessageControlStarted value)? controlStarted,
     TResult Function(_PeerMessageControlStopped value)? controlStopped,
     TResult Function(_PeerMessageOperateBetween value)? controlOperateBetween,
